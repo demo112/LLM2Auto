@@ -48,10 +48,16 @@ class TestMetadata:
         })
         
         # 尝试加载元数据文件
-        metadata_file = path_obj / "test_metadata.yaml"
-        if metadata_file.exists():
-            file_metadata = cls._load_metadata_file(metadata_file)
-            metadata.update(file_metadata)
+        metadata_files = [
+            path_obj / "metadata.yaml",
+            path_obj / "test_metadata.yaml"
+        ]
+        
+        for metadata_file in metadata_files:
+            if metadata_file.exists():
+                file_metadata = cls._load_metadata_file(metadata_file)
+                metadata.update(file_metadata)
+                break
         
         return cls(**metadata)
     
@@ -61,40 +67,52 @@ class TestMetadata:
         metadata = {
             'tags': [],
             'platforms': [],
-            'test_type': 'functional'
+            'test_type': 'functional',
+            'priority': 'medium'
         }
         
-        # 解析测试类型前缀
+        # 解析优先级
+        if '高优先级' in filename or '_high' in filename:
+            metadata['priority'] = 'high'
+        elif '低优先级' in filename or '_low' in filename:
+            metadata['priority'] = 'low'
+        elif '中优先级' in filename or '_medium' in filename:
+            metadata['priority'] = 'medium'
+        
+        # 解析平台信息
+        if 'android' in filename.lower():
+            metadata['platforms'].append('android')
+            metadata['tags'].append('android')
+        if 'ios' in filename.lower():
+            metadata['platforms'].append('ios')
+            metadata['tags'].append('ios')
+        if 'web' in filename.lower():
+            metadata['platforms'].append('web')
+            metadata['tags'].append('web')
+        
+        # 解析测试类型
         type_patterns = {
-            'smoke_': 'smoke',
-            'regression_': 'regression', 
-            'integration_': 'integration',
-            'e2e_': 'e2e',
-            'performance_': 'performance',
-            'security_': 'security'
+            'smoke': 'smoke',
+            'regression': 'regression', 
+            'integration': 'integration',
+            'e2e': 'e2e',
+            'performance': 'performance',
+            'security': 'security',
+            '登录': 'login',
+            '购物': 'shopping',
+            '用户管理': 'user_management',
+            '接口': 'api'
         }
         
-        for prefix, test_type in type_patterns.items():
-            if filename.startswith(prefix):
+        for pattern, test_type in type_patterns.items():
+            if pattern in filename:
                 metadata['test_type'] = test_type
                 metadata['tags'].append(test_type)
                 break
         
-        # 解析平台后缀
-        platform_patterns = {
-            '_android': 'android',
-            '_ios': 'ios', 
-            '_web': 'web'
-        }
-        
-        for suffix, platform in platform_patterns.items():
-            if filename.endswith(suffix):
-                metadata['platforms'].append(platform)
-                break
-        
         # 如果没有指定平台，默认为通用
         if not metadata['platforms']:
-            metadata['platforms'] = ['android', 'ios']
+            metadata['platforms'] = ['android']
         
         return metadata
     
@@ -118,6 +136,12 @@ class TestMetadata:
                 metadata['tags'] = data['tags']
             if 'platforms' in data:
                 metadata['platforms'] = data['platforms']
+            if 'priority' in data:
+                metadata['priority'] = data['priority']
+            if 'device_requirements' in data:
+                metadata['device_requirements'] = data['device_requirements']
+            if 'execution_config' in data:
+                metadata['execution_config'] = data['execution_config']
                 
             return metadata
         except Exception as e:
@@ -312,6 +336,56 @@ class AirtestDiscovery:
         
         return True
     
+    def validate_air_project(self, project_path: str) -> tuple[bool, List[str]]:
+        """验证 .air 项目并返回详细信息
+        
+        Returns:
+            tuple: (is_valid, issues_list)
+        """
+        issues = []
+        project_path = Path(project_path)
+        
+        try:
+            # 检查是否为目录
+            if not project_path.is_dir():
+                issues.append("项目路径不是一个有效的目录")
+                return False, issues
+            
+            # 检查是否为 .air 项目
+            if not project_path.name.endswith('.air'):
+                issues.append("项目目录名称不以 .air 结尾")
+            
+            # 检查主脚本文件
+            main_files = ['main.py', 'untitled.py']
+            found_main = False
+            for main_file in main_files:
+                if (project_path / main_file).exists():
+                    found_main = True
+                    break
+            
+            if not found_main:
+                issues.append(f"缺少主脚本文件 ({', '.join(main_files)} 中的任意一个)")
+            
+            # 检查图片模板文件
+            image_files = list(project_path.glob('*.png'))
+            if not image_files:
+                issues.append("建议添加图片模板文件 (.png)")
+            
+            # 检查元数据文件
+            metadata_files = ['metadata.yaml', 'test_metadata.yaml']
+            has_metadata = any((project_path / f).exists() for f in metadata_files)
+            if not has_metadata:
+                issues.append("建议添加元数据文件 (metadata.yaml)")
+            
+            # 项目有效性判断
+            is_valid = found_main and project_path.name.endswith('.air')
+            
+            return is_valid, issues
+            
+        except Exception as e:
+            issues.append(f"验证过程中出现错误: {e}")
+            return False, issues
+    
     def get_test_statistics(self, tests: List[TestMetadata]) -> Dict:
         """
         获取测试统计信息
@@ -327,6 +401,7 @@ class AirtestDiscovery:
             'by_category': {},
             'by_platform': {},
             'by_type': {},
+            'by_priority': {},
             'by_tags': {}
         }
         
@@ -340,7 +415,12 @@ class AirtestDiscovery:
                 stats['by_platform'][platform] = stats['by_platform'].get(platform, 0) + 1
             
             # 按类型统计
-            stats['by_type'][test.test_type] = stats['by_type'].get(test.test_type, 0) + 1
+            test_type = test.test_type or 'unknown'
+            stats['by_type'][test_type] = stats['by_type'].get(test_type, 0) + 1
+            
+            # 按优先级统计
+            priority = test.priority or 'medium'
+            stats['by_priority'][priority] = stats['by_priority'].get(priority, 0) + 1
             
             # 按标签统计
             for tag in test.tags:

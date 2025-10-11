@@ -1,0 +1,41 @@
+# Test Case Demo 项目元数据
+test_info:
+  name: "移动应用UI自动化测试演示"
+  description: "演示移动应用的滑动和点击操作，包含多个UI元素的交互测试"
+  author: "cooperd"
+  version: "1.0.0"
+  category: "mobile"
+  test_type: "ui_automation"
+  timeout: 300
+  retry_count: 2
+
+# 测试分类和标签
+tags:
+  - "ui_test"
+  - "mobile"
+  - "touch_interaction"
+  - "swipe_gesture"
+  - "demo"
+
+# 优先级设置
+priority: "high"
+
+# 支持的平台
+platforms:
+  - "android"
+
+# 设备要求
+device_requirements:
+  resolution: "1080x2340"
+  min_android_version: "7.0"
+  orientation: "portrait"
+
+# 执行配置
+execution_config:
+  screenshot_on_error: true
+  video_recording: false
+
+# 测试依赖
+dependencies:
+  before: []
+  after: []

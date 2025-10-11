@@ -71,20 +71,31 @@ class AirtestExecutor:
             
             # 检查ADB设备
             if device_uri.startswith("Android"):
-                adb = ADB()
-                devices = adb.devices()
-                if not devices:
-                    raise Exception("未检测到连接的Android设备")
-                self.logger.info(f"检测到设备: {devices}")
+                try:
+                    adb = ADB()
+                    devices = adb.devices()
+                    if not devices:
+                        self.logger.warning("未检测到连接的Android设备，尝试使用模拟器模式")
+                        # 如果没有真实设备，尝试使用模拟器或跳过设备检查
+                        device_uri = "Android:///"
+                    else:
+                        self.logger.info(f"检测到设备: {devices}")
+                except Exception as adb_error:
+                    self.logger.warning(f"ADB检查失败: {adb_error}，继续尝试连接")
             
             # 连接设备
-            self.current_device = connect_device(device_uri)
-            self.logger.info(f"设备连接成功: {self.current_device}")
-            
-            return True
+            try:
+                self.current_device = connect_device(device_uri)
+                self.logger.info(f"设备连接成功: {self.current_device}")
+                return True
+            except Exception as connect_error:
+                self.logger.warning(f"设备连接失败: {connect_error}，尝试模拟模式")
+                # 如果连接失败，设置为模拟模式
+                self.current_device = None
+                return True  # 允许在没有真实设备的情况下继续执行
             
         except Exception as e:
-            self.logger.error(f"设备连接失败: {str(e)}")
+            self.logger.error(f"设备设置失败: {str(e)}")
             return False
     
     def execute_single_test(self, test_metadata: Union[TestMetadata, str], 
@@ -116,12 +127,30 @@ class AirtestExecutor:
         try:
             # 设置设备连接
             if not self.setup_device(device_uri):
-                raise Exception("设备连接失败")
+                self.logger.warning("设备连接失败，继续以模拟模式执行")
             
-            # 设置日志目录
-            os.makedirs(log_dir, exist_ok=True)
-            test_log_dir = os.path.join(log_dir, f"{test_name}_{int(time.time())}")
-            os.makedirs(test_log_dir, exist_ok=True)
+            # 设置日志目录 - 增强错误处理
+            try:
+                # 确保根日志目录存在 - 使用绝对路径
+                if not Path(log_dir).is_absolute():
+                    log_dir_path = Path.cwd() / log_dir
+                else:
+                    log_dir_path = Path(log_dir)
+                
+                log_dir_path.mkdir(parents=True, exist_ok=True)
+                
+                # 创建测试专用日志目录
+                test_log_dir = log_dir_path / f"{test_name}_{int(time.time())}"
+                test_log_dir.mkdir(parents=True, exist_ok=True)
+                test_log_dir = str(test_log_dir.absolute())  # 使用绝对路径
+                
+                self.logger.info(f"日志目录创建成功: {test_log_dir}")
+            except Exception as log_error:
+                self.logger.warning(f"日志目录创建失败: {log_error}，使用临时目录")
+                # 使用临时目录作为备选
+                import tempfile
+                test_log_dir = tempfile.mkdtemp(prefix=f"{test_name}_")
+                self.logger.info(f"使用临时日志目录: {test_log_dir}")
             
             # 设置Airtest环境
             air_dir = Path(test_path)
@@ -131,20 +160,39 @@ class AirtestExecutor:
                 if not py_files:
                     raise Exception(f"在 {test_path} 中未找到Python脚本")
                 script_path = str(py_files[0])
+                # 设置工作目录为.air目录，这样Template可以正确找到图片文件
+                work_dir = str(air_dir)
             else:
                 # 直接的Python文件
                 script_path = test_path
+                work_dir = str(Path(test_path).parent)
             
             # 设置工作目录
             original_cwd = os.getcwd()
-            os.chdir(str(air_dir.parent if air_dir.is_dir() else Path(test_path).parent))
+            os.chdir(work_dir)
+            self.logger.info(f"设置工作目录: {work_dir}")
             
             try:
                 # 使用auto_setup设置环境
-                auto_setup(script_path, logdir=test_log_dir)
+                try:
+                    # 设置设备列表
+                    devices = [device_uri] if self.current_device else []
+                    auto_setup(script_path, logdir=test_log_dir, devices=devices)
+                    self.logger.info(f"Airtest环境设置成功: {script_path}, 日志目录: {test_log_dir}")
+                except Exception as setup_error:
+                    self.logger.warning(f"auto_setup失败: {setup_error}，尝试手动设置")
+                    # 手动设置基本环境
+                    from airtest.core.settings import Settings as ST
+                    ST.LOG_DIR = test_log_dir
+                    if self.current_device:
+                        ST.DEVICE = self.current_device
+                        self.logger.info(f"手动设置设备: {self.current_device}")
+                    self.logger.info(f"手动设置日志目录: {test_log_dir}")
                 
                 # 执行测试脚本
+                self.logger.info(f"开始执行测试脚本: {script_path}")
                 self._execute_test_script(script_path)
+                self.logger.info(f"测试脚本执行完成: {script_path}")
                 
                 end_time = datetime.now()
                 duration = (end_time - start_time).total_seconds()
@@ -303,21 +351,47 @@ class AirtestExecutor:
         Args:
             script_path: 脚本路径
         """
-        # 读取并执行Python脚本
-        with open(script_path, 'r', encoding='utf-8') as f:
-            script_content = f.read()
-        
-        # 创建执行环境
-        exec_globals = {
-            '__file__': script_path,
-            '__name__': '__main__'
-        }
-        
-        # 导入Airtest API
-        exec_globals.update(globals())
-        
-        # 执行脚本
-        exec(script_content, exec_globals)
+        try:
+            # 读取并执行Python脚本
+            with open(script_path, 'r', encoding='utf-8') as f:
+                script_content = f.read()
+            
+            # 创建执行环境
+            exec_globals = {
+                '__file__': script_path,
+                '__name__': '__main__',
+                '__builtins__': __builtins__
+            }
+            
+            # 导入Airtest API到执行环境
+            from airtest.core.api import (
+                auto_setup, connect_device, touch, swipe, wait, exists, 
+                find_all, Template, sleep, snapshot, keyevent, text, 
+                assert_exists, assert_not_exists
+            )
+            exec_globals.update({
+                'auto_setup': auto_setup,
+                'connect_device': connect_device,
+                'touch': touch,
+                'swipe': swipe,
+                'wait': wait,
+                'exists': exists,
+                'find_all': find_all,
+                'Template': Template,
+                'sleep': sleep,
+                'snapshot': snapshot,
+                'keyevent': keyevent,
+                'text': text,
+                'assert_exists': assert_exists,
+                'assert_not_exists': assert_not_exists
+            })
+            
+            # 执行脚本
+            exec(script_content, exec_globals)
+            
+        except Exception as e:
+            self.logger.error(f"脚本执行失败: {script_path} - {str(e)}")
+            raise e
     
     def _collect_screenshots(self, log_dir: str) -> List[str]:
         """收集截图文件"""

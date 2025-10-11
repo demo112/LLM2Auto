@@ -21,3 +21,822 @@
 2025-10-11 17:51:14,988 - airtest_framework.core.discovery - INFO - 成功发现 6 个测试用例
 2025-10-11 17:51:14,988 - airtest_framework - INFO - 发现 6 个测试用例
 2025-10-11 17:51:14,988 - airtest_framework - INFO - 发现 6 个测试用例
+2025-10-11 17:55:20,440 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:55:20,441 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:55:20,441 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:55:20,441 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:55:20,441 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:55:20,441 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:55:20,441 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:56:03,206 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:56:03,207 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:56:03,207 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:56:03,207 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:56:03,207 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:56:03,207 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:56:03,207 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:56:28,044 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:56:28,044 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:56:28,044 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:56:28,044 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:56:28,044 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:56:28,045 - airtest_framework.core.discovery - ERROR - 解析测试失败 tests/mobile/test_case_demo.air: TestMetadata.__init__() got an unexpected keyword argument 'created_date'
+2025-10-11 17:56:28,045 - airtest_framework.core.discovery - INFO - 成功发现 0 个测试用例
+2025-10-11 17:56:28,045 - airtest_framework - INFO - 发现 0 个测试用例
+2025-10-11 17:56:57,096 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:56:57,096 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:56:57,096 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:56:57,096 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:56:57,097 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:56:57,097 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:56:57,097 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:57:20,571 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:57:20,571 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:57:20,572 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:57:20,572 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:57:20,572 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:57:20,574 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:57:20,575 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:58:04,803 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:58:04,803 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:58:04,803 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:58:04,803 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:58:04,803 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:58:04,804 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:58:04,804 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:58:23,349 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:58:23,349 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:58:23,349 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:58:23,349 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:58:23,349 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:58:23,350 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:58:23,350 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:58:23,351 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:58:23,351 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:58:23,351 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:58:23,351 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:04,238 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:59:04,238 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:59:04,238 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:59:04,238 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:59:04,239 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:59:04,240 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:59:04,240 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:59:04,240 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:04,240 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:04,240 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:04,240 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:34,585 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 17:59:34,585 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 17:59:34,585 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 17:59:34,585 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 17:59:34,585 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 17:59:34,586 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 17:59:34,586 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 17:59:34,586 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:34,586 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:34,586 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 17:59:34,586 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 18:06:30,192 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:06:30,192 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:06:30,192 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:06:30,192 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:06:30,192 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-11 18:06:30,193 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-11 18:06:30,193 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-11 18:06:30,193 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 18:06:30,193 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 18:06:30,194 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 18:06:30,194 - airtest_framework.core.discovery - INFO - 过滤后剩余 1 个测试用例
+2025-10-11 18:07:22,063 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:07:22,063 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:07:22,063 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:07:22,063 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:07:22,064 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:07:22,065 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:07:22,065 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:07:22,066 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:07:22,066 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:07:22,066 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:07:22,066 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:34:59,465 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:34:59,465 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:34:59,465 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:34:59,465 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:34:59,465 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:34:59,465 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:34:59,467 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:34:59,467 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:34:59,467 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:34:59,467 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:35:08,308 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:35:08,308 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:35:08,308 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:35:08,308 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:35:08,308 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:35:08,309 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:35:08,310 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:35:08,311 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:35:08,311 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:35:08,311 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:35:22,048 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:35:22,048 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:35:22,048 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:35:22,048 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:35:22,048 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:35:22,049 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:35:22,050 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:35:22,050 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:35:22,050 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:35:22,050 - main - INFO - 程序执行完成，退出码: 1
+2025-10-11 18:35:54,823 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:35:54,824 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:35:54,824 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:35:54,824 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:35:54,824 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:35:54,824 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:35:54,826 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:35:54,826 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:35:54,826 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:35:54,826 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:36:02,364 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:36:02,364 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:36:02,364 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:36:02,364 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:36:02,364 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:36:02,364 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:36:02,366 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:36:02,366 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:36:02,366 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:36:02,366 - TestRunner - INFO - 开始验证 2 个测试项目
+2025-10-11 18:36:02,366 - TestRunner - INFO - 验证项目 移动应用UI自动化测试演示: 有效
+2025-10-11 18:36:02,366 - TestRunner - INFO - 验证项目 移动应用UI自动化测试演示: 有效
+2025-10-11 18:36:02,366 - TestRunner - INFO - 验证完成: 2 个有效, 0 个无效
+2025-10-11 18:36:02,366 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:36:20,829 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:36:20,829 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:36:20,829 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:36:20,829 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:36:20,829 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:36:20,830 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:36:20,831 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:36:20,831 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:36:20,831 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:36:20,831 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:36:20,831 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:36:20,831 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:36:20,831 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:36:31,659 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:36:31,659 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:36:31,659 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:36:31,659 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:36:31,659 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:36:31,660 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:36:31,661 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:36:31,661 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:36:31,661 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:36:31,661 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:36:31,661 - TestRunner - INFO - 模拟执行模式
+2025-10-11 18:36:31,661 - TestRunner - INFO - 模拟执行: 移动应用UI自动化测试演示
+2025-10-11 18:36:31,661 - TestRunner - INFO - 模拟执行: 移动应用UI自动化测试演示
+2025-10-11 18:36:31,661 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:36:48,562 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:36:48,562 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:36:48,563 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:36:48,563 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:36:48,563 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:36:48,563 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:36:48,564 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:36:48,564 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:36:48,564 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:36:48,565 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:36:48,565 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:36:48,565 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:36:48,565 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:36:48,565 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:36:48,565 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:36:48,565 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:48,565 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:48,701 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:48,813 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e3327b0>
+2025-10-11 18:36:48,814 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179008'
+2025-10-11 18:36:49,002 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,002 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,002 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,002 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:49,020 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:49,135 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10e3327b0> -> <airtest.core.android.android.Android object at 0x10e34c190>
+2025-10-11 18:36:49,135 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e34c190>
+2025-10-11 18:36:49,136 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179009'
+2025-10-11 18:36:49,311 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,311 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,311 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,311 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:49,324 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:49,419 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10e34c190> -> <airtest.core.android.android.Android object at 0x10e34c690>
+2025-10-11 18:36:49,420 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e34c690>
+2025-10-11 18:36:49,420 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179009'
+2025-10-11 18:36:49,603 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,604 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,604 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:49,622 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:49,733 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10e34c690> -> <airtest.core.android.android.Android object at 0x10e3515b0>
+2025-10-11 18:36:49,734 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e3515b0>
+2025-10-11 18:36:49,734 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179009'
+2025-10-11 18:36:49,931 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,931 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,931 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:49,931 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:49,950 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:50,055 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10e3515b0> -> <airtest.core.android.android.Android object at 0x10e352060>
+2025-10-11 18:36:50,055 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e352060>
+2025-10-11 18:36:50,056 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179010'
+2025-10-11 18:36:50,218 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:36:50,218 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:36:50,218 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:36:50,218 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:36:50,233 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:36:50,320 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10e352060> -> <airtest.core.android.android.Android object at 0x10e2b7d10>
+2025-10-11 18:36:50,320 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10e2b7d10>
+2025-10-11 18:36:50,321 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179010'
+2025-10-11 18:36:50,487 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:36:50,487 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 0/2
+2025-10-11 18:36:50,487 - TestRunner - INFO - 测试执行完成: 成功 0, 失败 2, 总耗时 1.92秒
+2025-10-11 18:36:50,487 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179008'
+2025-10-11 18:36:50,488 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179009'
+2025-10-11 18:36:50,489 - main - INFO - 程序执行完成，退出码: 1
+2025-10-11 18:37:46,479 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:37:46,479 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:37:46,479 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:37:46,479 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:37:46,480 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:37:46,482 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:37:46,482 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:37:46,482 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:37:46,482 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:37:46,482 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:37:46,482 - airtest_framework.core.config - INFO - 未找到配置文件，使用默认配置
+2025-10-11 18:37:46,482 - airtest_framework.core.config - INFO - 使用默认配置
+2025-10-11 18:37:46,482 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:37:46,482 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:37:46,482 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:37:46,482 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:38:27,935 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:38:27,935 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:38:27,935 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:38:27,935 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:38:27,935 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:38:27,937 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:38:27,937 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:38:27,937 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:38:27,937 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:38:27,937 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:38:27,937 - airtest_framework.core.config - INFO - 未找到配置文件，使用默认配置
+2025-10-11 18:38:27,937 - airtest_framework.core.config - INFO - 使用默认配置
+2025-10-11 18:38:27,937 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:38:27,937 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:38:27,937 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:38:27,937 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:47:24,279 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:47:24,279 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:47:24,279 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:47:24,279 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:47:24,279 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:47:24,279 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:47:24,281 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:47:24,281 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:47:24,281 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:47:24,281 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:47:24,281 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:47:24,281 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:47:24,281 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:47:24,281 - TestRunner - INFO - 模拟执行模式
+2025-10-11 18:47:24,281 - TestRunner - INFO - 模拟执行: 移动应用UI自动化测试演示
+2025-10-11 18:47:24,281 - TestRunner - INFO - 模拟执行: 移动应用UI自动化测试演示
+2025-10-11 18:47:24,281 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:47:32,086 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:47:32,086 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:47:32,086 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:47:32,086 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:47:32,086 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:47:32,087 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:47:32,088 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:47:32,088 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:47:32,088 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:47:32,088 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:47:32,088 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:47:32,089 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:47:32,089 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:47:32,243 - TestRunner - INFO - 检测到Android设备: ['R5CW23068CJ\tdevice']
+2025-10-11 18:47:32,243 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:47:32,243 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:47:32,243 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:32,243 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:32,257 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:32,380 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b3e67b0>
+2025-10-11 18:47:32,380 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179652
+2025-10-11 18:47:32,381 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179652'，尝试手动设置
+2025-10-11 18:47:32,381 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:47:32,382 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:33,036 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:33,036 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:33,036 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:34,378 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:34,379 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:47:37,184 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179652/1760179657154.jpg'
+2025-10-11 18:47:37,184 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179652/1760179657154.jpg'
+2025-10-11 18:47:37,387 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:37,388 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:37,388 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:37,388 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:37,407 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:37,524 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11b3e67b0> -> <airtest.core.android.android.Android object at 0x11b407390>
+2025-10-11 18:47:37,525 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b407390>
+2025-10-11 18:47:37,525 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179657
+2025-10-11 18:47:37,525 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179657'，尝试手动设置
+2025-10-11 18:47:37,525 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:47:37,525 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:38,237 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:38,238 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:38,238 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:39,124 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:39,124 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:47:41,820 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179657/1760179661816.jpg'
+2025-10-11 18:47:41,820 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179657/1760179661816.jpg'
+2025-10-11 18:47:42,000 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:47:42,000 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:42,000 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:42,000 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:42,014 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:42,122 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11b407390> -> <airtest.core.android.android.Android object at 0x11b4074d0>
+2025-10-11 18:47:42,122 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b4074d0>
+2025-10-11 18:47:42,122 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179662
+2025-10-11 18:47:42,122 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179662'，尝试手动设置
+2025-10-11 18:47:42,122 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:47:42,123 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:42,774 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:42,775 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:42,775 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:43,641 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:43,641 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:47:46,370 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179662/1760179666367.jpg'
+2025-10-11 18:47:46,370 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179662/1760179666367.jpg'
+2025-10-11 18:47:46,541 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:47:46,542 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:46,542 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:46,559 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:46,637 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11b4074d0> -> <airtest.core.android.android.Android object at 0x11b3ef6f0>
+2025-10-11 18:47:46,637 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b3ef6f0>
+2025-10-11 18:47:46,638 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179666
+2025-10-11 18:47:46,638 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179666'，尝试手动设置
+2025-10-11 18:47:46,638 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:47:46,639 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:47,276 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:47,276 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:47,276 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:48,149 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:48,149 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:47:50,853 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179666/1760179670848.jpg'
+2025-10-11 18:47:50,854 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179666/1760179670848.jpg'
+2025-10-11 18:47:51,055 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:51,055 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:51,055 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:51,055 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:51,075 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:51,187 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11b3ef6f0> -> <airtest.core.android.android.Android object at 0x11b3efce0>
+2025-10-11 18:47:51,187 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b3efce0>
+2025-10-11 18:47:51,188 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179671
+2025-10-11 18:47:51,188 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179671'，尝试手动设置
+2025-10-11 18:47:51,188 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:47:51,188 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:51,882 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:51,883 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:51,883 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:52,809 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:52,810 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:47:55,571 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179671/1760179675564.jpg'
+2025-10-11 18:47:55,572 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179671/1760179675564.jpg'
+2025-10-11 18:47:55,785 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:47:55,785 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:47:55,785 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:47:55,785 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:47:55,806 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:47:55,913 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11b3efce0> -> <airtest.core.android.android.Android object at 0x11b51fbf0>
+2025-10-11 18:47:55,913 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11b51fbf0>
+2025-10-11 18:47:55,913 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179675
+2025-10-11 18:47:55,913 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179675'，尝试手动设置
+2025-10-11 18:47:55,913 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:47:55,914 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:47:56,598 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:47:56,598 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:47:56,599 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:47:57,425 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:47:57,426 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:00,089 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179675/1760179680085.jpg'
+2025-10-11 18:48:00,090 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179675/1760179680085.jpg'
+2025-10-11 18:48:00,272 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:48:00,272 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 0/2
+2025-10-11 18:48:00,272 - TestRunner - INFO - 测试执行完成: 成功 0, 失败 2, 总耗时 28.18秒
+2025-10-11 18:48:00,272 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179652/1760179657154.jpg'
+2025-10-11 18:48:00,272 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179666/1760179670848.jpg'
+2025-10-11 18:48:00,273 - main - INFO - 程序执行完成，退出码: 1
+2025-10-11 18:48:25,940 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:48:25,940 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:48:25,941 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:48:25,941 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:48:25,941 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:48:25,941 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:48:25,943 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:48:25,943 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:48:25,943 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:48:25,943 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:48:25,943 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:48:25,943 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:48:25,943 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:48:25,959 - TestRunner - INFO - 检测到Android设备: ['R5CW23068CJ\tdevice']
+2025-10-11 18:48:25,959 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:48:25,959 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:48:25,959 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:25,959 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:25,972 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:26,064 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119db67b0>
+2025-10-11 18:48:26,064 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179706
+2025-10-11 18:48:26,064 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179706'，尝试手动设置
+2025-10-11 18:48:26,064 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:48:26,065 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:26,702 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:26,702 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:26,702 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:27,517 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:27,517 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:30,149 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179706/1760179710123.jpg'
+2025-10-11 18:48:30,149 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179706/1760179710123.jpg'
+2025-10-11 18:48:30,330 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:30,330 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:30,330 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:30,330 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:30,347 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:30,455 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x119db67b0> -> <airtest.core.android.android.Android object at 0x119dd7390>
+2025-10-11 18:48:30,455 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119dd7390>
+2025-10-11 18:48:30,455 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179710
+2025-10-11 18:48:30,456 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179710'，尝试手动设置
+2025-10-11 18:48:30,456 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:48:30,456 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:31,119 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:31,119 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:31,119 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:31,978 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:31,979 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:34,619 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179710/1760179714613.jpg'
+2025-10-11 18:48:34,619 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179710/1760179714613.jpg'
+2025-10-11 18:48:34,815 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:48:34,815 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:34,815 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:34,815 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:34,833 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:34,951 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x119dd7390> -> <airtest.core.android.android.Android object at 0x119dd74d0>
+2025-10-11 18:48:34,951 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119dd74d0>
+2025-10-11 18:48:34,951 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179714
+2025-10-11 18:48:34,951 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179714'，尝试手动设置
+2025-10-11 18:48:34,951 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:48:34,952 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:35,622 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:35,622 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:35,622 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:36,533 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:36,533 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:39,275 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179714/1760179719269.jpg'
+2025-10-11 18:48:39,276 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179714/1760179719269.jpg'
+2025-10-11 18:48:39,447 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:48:39,447 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:39,448 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:39,463 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:39,568 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x119dd74d0> -> <airtest.core.android.android.Android object at 0x119dbf6f0>
+2025-10-11 18:48:39,568 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119dbf6f0>
+2025-10-11 18:48:39,568 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179719
+2025-10-11 18:48:39,569 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179719'，尝试手动设置
+2025-10-11 18:48:39,569 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:48:39,570 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:40,270 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:40,270 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:40,270 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:41,159 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:41,159 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:43,915 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179719/1760179723911.jpg'
+2025-10-11 18:48:43,915 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179719/1760179723911.jpg'
+2025-10-11 18:48:44,124 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:44,124 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:44,124 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:44,124 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:44,148 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:44,269 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x119dbf6f0> -> <airtest.core.android.android.Android object at 0x119dbfce0>
+2025-10-11 18:48:44,269 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119dbfce0>
+2025-10-11 18:48:44,269 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179724
+2025-10-11 18:48:44,269 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179724'，尝试手动设置
+2025-10-11 18:48:44,269 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:48:44,270 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:44,962 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:44,962 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:44,962 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:45,875 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:45,876 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:48,580 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179724/1760179728577.jpg'
+2025-10-11 18:48:48,580 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179724/1760179728577.jpg'
+2025-10-11 18:48:48,760 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:48:48,760 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:48:48,760 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:48:48,760 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:48:48,778 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:48:48,895 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x119dbfce0> -> <airtest.core.android.android.Android object at 0x119eebbf0>
+2025-10-11 18:48:48,895 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x119eebbf0>
+2025-10-11 18:48:48,895 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179728
+2025-10-11 18:48:48,896 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179728'，尝试手动设置
+2025-10-11 18:48:48,896 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:48:48,896 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:48:49,616 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:48:49,616 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:48:49,616 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:48:50,496 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:48:50,496 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:48:53,201 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179728/1760179733197.jpg'
+2025-10-11 18:48:53,202 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179728/1760179733197.jpg'
+2025-10-11 18:48:53,374 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:48:53,374 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 0/2
+2025-10-11 18:48:53,374 - TestRunner - INFO - 测试执行完成: 成功 0, 失败 2, 总耗时 27.43秒
+2025-10-11 18:48:53,375 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179706/1760179710123.jpg'
+2025-10-11 18:48:53,375 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/logs/execution/移动应用UI自动化测试演示_1760179719/1760179723911.jpg'
+2025-10-11 18:48:53,375 - main - INFO - 程序执行完成，退出码: 1
+2025-10-11 18:52:44,585 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:52:44,585 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:52:44,585 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:52:44,585 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:52:44,585 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:52:44,585 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:52:44,587 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:52:44,587 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:52:44,587 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:52:44,587 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:52:44,587 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:52:44,587 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:52:44,587 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
+2025-10-11 18:52:44,603 - TestRunner - INFO - 检测到Android设备: ['R5CW23068CJ\tdevice']
+2025-10-11 18:52:44,603 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:52:44,603 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:52:44,603 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:52:44,603 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:52:44,616 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:52:44,720 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x1206ee900>
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179964
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179964'，尝试手动设置
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x1206ee900>
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179964
+2025-10-11 18:52:44,721 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:52:44,722 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:52:45,345 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:52:45,346 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:52:45,346 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:52:46,250 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:52:46,250 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:52:48,546 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179964/1760179968529.jpg'
+2025-10-11 18:52:48,546 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179964/1760179968529.jpg'
+2025-10-11 18:52:48,711 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:52:48,711 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:52:48,711 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:52:48,711 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:52:48,727 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:52:48,828 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x1206ee900> -> <airtest.core.android.android.Android object at 0x12071f750>
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x12071f750>
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179968
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179968'，尝试手动设置
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x12071f750>
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179968
+2025-10-11 18:52:48,828 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:52:48,829 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:52:49,530 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:52:49,530 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:52:49,530 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:52:50,321 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:52:50,321 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:52:52,582 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179968/1760179972576.jpg'
+2025-10-11 18:52:52,582 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179968/1760179972576.jpg'
+2025-10-11 18:52:52,751 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:52:52,751 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:52:52,751 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:52:52,751 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:52:52,767 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:52:52,869 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x12071f750> -> <airtest.core.android.android.Android object at 0x12071dd10>
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x12071dd10>
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179972
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179972'，尝试手动设置
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x12071dd10>
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179972
+2025-10-11 18:52:52,870 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:52:52,870 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:52:53,565 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:52:53,566 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:52:53,566 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:52:54,317 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:52:54,318 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:52:56,871 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179972/1760179976865.jpg'
+2025-10-11 18:52:56,871 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179972/1760179976865.jpg'
+2025-10-11 18:52:57,083 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:52:57,083 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:52:57,083 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:52:57,099 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:52:57,223 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x12071dd10> -> <airtest.core.android.android.Android object at 0x1207176f0>
+2025-10-11 18:52:57,223 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x1207176f0>
+2025-10-11 18:52:57,223 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179977
+2025-10-11 18:52:57,224 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-11 18:52:57,224 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179977'，尝试手动设置
+2025-10-11 18:52:57,224 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x1207176f0>
+2025-10-11 18:52:57,224 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179977
+2025-10-11 18:52:57,224 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:52:57,225 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:52:57,862 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:52:57,862 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:52:57,862 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:52:58,682 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:52:58,683 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:53:01,177 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179977/1760179981172.jpg'
+2025-10-11 18:53:01,177 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179977/1760179981172.jpg'
+2025-10-11 18:53:01,348 - airtest_framework.core.executor - INFO - 测试失败，开始重试: 移动应用UI自动化测试演示
+2025-10-11 18:53:01,348 - airtest_framework.core.executor - INFO - 第 1 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:53:01,348 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:53:01,348 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:53:01,363 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:53:01,460 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x1207176f0> -> <airtest.core.android.android.Android object at 0x120717ce0>
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x120717ce0>
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179981
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179981'，尝试手动设置
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x120717ce0>
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179981
+2025-10-11 18:53:01,460 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:53:01,461 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:53:02,153 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:53:02,153 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:53:02,153 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:53:02,969 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:53:02,970 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:53:05,456 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179981/1760179985452.jpg'
+2025-10-11 18:53:05,456 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179981/1760179985452.jpg'
+2025-10-11 18:53:05,631 - airtest_framework.core.executor - WARNING - 第 1 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:53:05,631 - airtest_framework.core.executor - INFO - 第 2 次重试: 移动应用UI自动化测试演示
+2025-10-11 18:53:05,631 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:53:05,631 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-11 18:53:05,648 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-11 18:53:05,764 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x120717ce0> -> <airtest.core.android.android.Android object at 0x1209efd10>
+2025-10-11 18:53:05,764 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x1209efd10>
+2025-10-11 18:53:05,764 - airtest_framework.core.executor - INFO - 日志目录创建成功: logs/execution/移动应用UI自动化测试演示_1760179985
+2025-10-11 18:53:05,764 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-11 18:53:05,764 - airtest_framework.core.executor - WARNING - auto_setup失败: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179985'，尝试手动设置
+2025-10-11 18:53:05,764 - airtest_framework.core.executor - INFO - 手动设置设备: <airtest.core.android.android.Android object at 0x1209efd10>
+2025-10-11 18:53:05,765 - airtest_framework.core.executor - INFO - 手动设置日志目录: logs/execution/移动应用UI自动化测试演示_1760179985
+2025-10-11 18:53:05,765 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:53:05,765 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:53:06,460 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:53:06,460 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:53:06,460 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:53:07,286 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:53:07,286 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:53:09,756 - airtest_framework.core.executor - ERROR - 脚本执行失败: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179985/1760179989753.jpg'
+2025-10-11 18:53:09,756 - airtest_framework.core.executor - ERROR - 测试执行失败: 移动应用UI自动化测试演示 - [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179985/1760179989753.jpg'
+2025-10-11 18:53:09,948 - airtest_framework.core.executor - WARNING - 第 2 次重试失败: 移动应用UI自动化测试演示
+2025-10-11 18:53:09,948 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 0/2
+2025-10-11 18:53:09,948 - TestRunner - INFO - 测试执行完成: 成功 0, 失败 2, 总耗时 25.36秒
+2025-10-11 18:53:09,948 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/logs/execution/移动应用UI自动化测试演示_1760179964/1760179968529.jpg'
+2025-10-11 18:53:09,948 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: '/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/logs/execution/移动应用UI自动化测试演示_1760179977/1760179981172.jpg'
+2025-10-11 18:53:09,950 - main - INFO - 程序执行完成，退出码: 1
+2025-10-11 18:56:18,788 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:56:18,788 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:56:18,788 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:56:18,788 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:56:18,788 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:56:18,789 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:56:18,790 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:56:18,790 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:56:18,790 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:56:18,790 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:56:18,790 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:56:18,790 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:56:18,791 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: android:R5CW23068CJ, 并行: False
+2025-10-11 18:56:18,791 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:56:18,791 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:56:18,791 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:56:18,791 - airtest_framework.core.executor - INFO - 正在连接设备: android:R5CW23068CJ
+2025-10-11 18:56:18,892 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10d59af90>
+2025-10-11 18:56:18,892 - airtest_framework.core.executor - INFO - 日志目录创建成功: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180178
+2025-10-11 18:56:18,893 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air
+2025-10-11 18:56:18,965 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10d59af90> -> <airtest.core.android.android.Android object at 0x10d5d5310>
+2025-10-11 18:56:18,965 - airtest_framework.core.executor - INFO - Airtest环境设置成功: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py, 日志目录: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180178
+2025-10-11 18:56:18,965 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:56:18,967 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:56:19,635 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:56:19,635 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:56:19,635 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:56:20,563 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:56:20,563 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:56:24,232 - airtest.core.android.rotation - INFO - update orientation None->0
+2025-10-11 18:56:25,988 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170830132.png)
+2025-10-11 18:56:26,830 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170751771.png)
+2025-10-11 18:56:27,872 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170753763.png)
+2025-10-11 18:56:29,054 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170755526.png)
+2025-10-11 18:56:29,943 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170757400.png)
+2025-10-11 18:56:30,961 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170761966.png)
+2025-10-11 18:56:31,967 - airtest_framework.core.executor - INFO - 测试脚本执行完成: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:56:32,293 - airtest_framework.core.executor - INFO - 测试执行成功: 移动应用UI自动化测试演示 (耗时: 13.18s)
+2025-10-11 18:56:32,293 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:56:32,293 - airtest_framework.core.executor - INFO - 正在连接设备: android:R5CW23068CJ
+2025-10-11 18:56:32,378 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10d5d5310> -> <airtest.core.android.android.Android object at 0x10d5d7890>
+2025-10-11 18:56:32,379 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10d5d7890>
+2025-10-11 18:56:32,379 - airtest_framework.core.executor - INFO - 日志目录创建成功: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180192
+2025-10-11 18:56:32,379 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-11 18:56:32,444 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10d5d7890> -> <airtest.core.android.android.Android object at 0x10d5c1940>
+2025-10-11 18:56:32,444 - airtest_framework.core.executor - INFO - Airtest环境设置成功: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py, 日志目录: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180192
+2025-10-11 18:56:32,444 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:56:32,445 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:56:33,065 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:56:33,066 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:56:33,066 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:56:33,828 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:56:33,828 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:56:37,461 - airtest.core.android.rotation - INFO - update orientation None->0
+2025-10-11 18:56:39,214 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170830132.png)
+2025-10-11 18:56:40,042 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170751771.png)
+2025-10-11 18:56:40,941 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170753763.png)
+2025-10-11 18:56:42,152 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170755526.png)
+2025-10-11 18:56:43,159 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170757400.png)
+2025-10-11 18:56:44,197 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170761966.png)
+2025-10-11 18:56:45,247 - airtest_framework.core.executor - INFO - 测试脚本执行完成: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:56:45,583 - airtest_framework.core.executor - INFO - 测试执行成功: 移动应用UI自动化测试演示 (耗时: 12.95s)
+2025-10-11 18:56:45,583 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 2/2
+2025-10-11 18:56:45,583 - TestRunner - INFO - 测试执行完成: 成功 2, 失败 0, 总耗时 26.79秒
+2025-10-11 18:56:45,584 - main - INFO - 程序执行完成，退出码: 0
+2025-10-11 18:58:26,875 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-11 18:58:26,875 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-11 18:58:26,875 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-11 18:58:26,875 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-11 18:58:26,875 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-11 18:58:26,876 - airtest_framework.core.discovery - INFO - 发现 2 个 .air 项目
+2025-10-11 18:58:26,877 - airtest_framework.core.discovery - INFO - 成功发现 2 个测试用例
+2025-10-11 18:58:26,877 - airtest_framework - INFO - 发现 2 个测试用例
+2025-10-11 18:58:26,877 - TestRunner - INFO - 发现 2 个测试项目
+2025-10-11 18:58:26,878 - TestRunner - INFO - 开始过滤测试，初始数量: 2
+2025-10-11 18:58:26,878 - airtest_framework.core.discovery - INFO - 过滤后剩余 2 个测试用例
+2025-10-11 18:58:26,878 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
+2025-10-11 18:58:26,878 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: android:R5CW23068CJ, 并行: False
+2025-10-11 18:58:26,878 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-11 18:58:26,878 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 2 个测试
+2025-10-11 18:58:26,878 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:58:26,878 - airtest_framework.core.executor - INFO - 正在连接设备: android:R5CW23068CJ
+2025-10-11 18:58:26,945 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x11616af90>
+2025-10-11 18:58:26,945 - airtest_framework.core.executor - INFO - 日志目录创建成功: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180306
+2025-10-11 18:58:26,946 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air
+2025-10-11 18:58:27,023 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x11616af90> -> <airtest.core.android.android.Android object at 0x1161a5310>
+2025-10-11 18:58:27,024 - airtest_framework.core.executor - INFO - Airtest环境设置成功: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py, 日志目录: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180306
+2025-10-11 18:58:27,024 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:58:27,025 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:58:27,758 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:58:27,758 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:58:27,759 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:58:28,741 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:58:28,741 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:58:32,494 - airtest.core.android.rotation - INFO - update orientation None->0
+2025-10-11 18:58:34,303 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170830132.png)
+2025-10-11 18:58:35,185 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170751771.png)
+2025-10-11 18:58:36,070 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170753763.png)
+2025-10-11 18:58:37,246 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170755526.png)
+2025-10-11 18:58:38,243 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170757400.png)
+2025-10-11 18:58:39,312 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170761966.png)
+2025-10-11 18:58:40,388 - airtest_framework.core.executor - INFO - 测试脚本执行完成: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/untitled.py
+2025-10-11 18:58:40,721 - airtest_framework.core.executor - INFO - 测试执行成功: 移动应用UI自动化测试演示 (耗时: 13.51s)
+2025-10-11 18:58:40,721 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-11 18:58:40,721 - airtest_framework.core.executor - INFO - 正在连接设备: android:R5CW23068CJ
+2025-10-11 18:58:40,790 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x1161a5310> -> <airtest.core.android.android.Android object at 0x1161a7890>
+2025-10-11 18:58:40,790 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x1161a7890>
+2025-10-11 18:58:40,790 - airtest_framework.core.executor - INFO - 日志目录创建成功: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180320
+2025-10-11 18:58:40,790 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-11 18:58:40,838 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x1161a7890> -> <airtest.core.android.android.Android object at 0x116191940>
+2025-10-11 18:58:40,838 - airtest_framework.core.executor - INFO - Airtest环境设置成功: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py, 日志目录: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760180320
+2025-10-11 18:58:40,838 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:58:40,838 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170824533.png)
+2025-10-11 18:58:41,489 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-11 18:58:41,489 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-11 18:58:41,489 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-11 18:58:42,441 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-11 18:58:42,441 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-11 18:58:46,321 - airtest.core.android.rotation - INFO - update orientation None->0
+2025-10-11 18:58:48,220 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170830132.png)
+2025-10-11 18:58:49,051 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170751771.png)
+2025-10-11 18:58:49,939 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170753763.png)
+2025-10-11 18:58:51,111 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170755526.png)
+2025-10-11 18:58:52,100 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170757400.png)
+2025-10-11 18:58:53,187 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo2.air/tpl1760170761966.png)
+2025-10-11 18:58:54,266 - airtest_framework.core.executor - INFO - 测试脚本执行完成: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/untitled.py
+2025-10-11 18:58:54,604 - airtest_framework.core.executor - INFO - 测试执行成功: 移动应用UI自动化测试演示 (耗时: 13.54s)
+2025-10-11 18:58:54,605 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 2/2
+2025-10-11 18:58:54,605 - TestRunner - INFO - 测试执行完成: 成功 2, 失败 0, 总耗时 27.73秒
+2025-10-11 18:58:54,606 - main - INFO - 程序执行完成，退出码: 0
