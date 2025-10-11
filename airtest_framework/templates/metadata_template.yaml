@@ -1,0 +1,82 @@
+# Airtest 项目元数据模板
+# 将此文件复制到 .air 项目根目录并重命名为 metadata.yaml
+
+# 基本信息
+name: "示例测试项目"
+description: "这是一个示例的 Airtest 自动化测试项目"
+version: "1.0.0"
+author: "测试工程师"
+created_date: "2024-01-01"
+
+# 测试分类
+category: "mobile"  # mobile, web, api, performance
+subcategory: "ui"   # ui, functional, regression, smoke
+
+# 优先级和标签
+priority: "medium"  # high, medium, low
+tags:
+  - "android"
+  - "ui_test"
+  - "regression"
+
+# 设备要求
+device_requirements:
+  platform: "Android"  # Android, iOS, Windows
+  min_version: "7.0"
+  resolution: "1080x1920"
+  orientation: "portrait"  # portrait, landscape, auto
+
+# 执行配置
+execution:
+  timeout: 300  # 秒
+  retry_count: 2
+  screenshot_on_error: true
+  cleanup_after_test: true
+
+# 依赖关系
+dependencies:
+  before:  # 需要在此测试之前执行的测试
+    - "login_test"
+    - "setup_test"
+  after:   # 需要在此测试之后执行的测试
+    - "cleanup_test"
+
+# 测试数据
+test_data:
+  app_package: "com.example.app"
+  test_account:
+    username: "test_user"
+    password: "test_password"
+  test_urls:
+    - "https://example.com/test1"
+    - "https://example.com/test2"
+
+# 环境配置
+environment:
+  test_env: "staging"  # dev, staging, production
+  api_base_url: "https://api-staging.example.com"
+  database_config:
+    host: "test-db.example.com"
+    port: 5432
+
+# 报告配置
+reporting:
+  generate_html: true
+  generate_json: true
+  include_screenshots: true
+  include_logs: true
+
+# 通知配置
+notifications:
+  on_failure: true
+  on_success: false
+  channels:
+    - "email"
+    - "slack"
+
+# 自定义配置
+custom:
+  # 可以添加项目特定的配置
+  special_settings:
+    enable_debug: false
+    use_mock_data: false

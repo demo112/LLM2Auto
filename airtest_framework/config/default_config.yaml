@@ -1,0 +1,244 @@
+# Airtest 框架默认配置
+
+# 框架基本配置
+framework:
+  name: "Airtest Framework"
+  version: "1.0.0"
+  debug: false
+  
+# 设备配置
+device:
+  default_platform: "Android"
+  connection_timeout: 30
+  operation_timeout: 10
+  screenshot_quality: 80
+  auto_setup: true
+  
+  # Android 特定配置
+  android:
+    adb_timeout: 30
+    install_timeout: 120
+    start_timeout: 30
+    
+  # iOS 特定配置  
+  ios:
+    wda_timeout: 60
+    install_timeout: 180
+
+# 执行配置
+execution:
+  # 全局超时设置
+  default_timeout: 300
+  step_timeout: 30
+  retry_count: 2
+  retry_delay: 1
+  
+  # 并发执行
+  parallel_execution: false
+  max_workers: 4
+  
+  # 错误处理
+  continue_on_error: false
+  screenshot_on_error: true
+  save_logs_on_error: true
+
+# 日志配置
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # 文件日志
+  file_logging: true
+  log_rotation: true
+  max_log_size: "10MB"
+  backup_count: 5
+  
+  # 控制台日志
+  console_logging: true
+  console_level: "INFO"
+
+# 报告配置
+reporting:
+  # 报告格式
+  formats:
+    - "html"
+    - "json"
+  
+  # HTML 报告配置
+  html:
+    template: "default"
+    include_screenshots: true
+    include_logs: true
+    compress_images: true
+    
+  # JSON 报告配置
+  json:
+    pretty_print: true
+    include_metadata: true
+    
+  # 报告存储
+  output_dir: "reports"
+  archive_reports: true
+  max_reports: 50
+
+# 截图配置
+screenshot:
+  # 截图质量和格式
+  format: "png"  # png, jpg
+  quality: 90
+  
+  # 自动截图
+  auto_screenshot: true
+  screenshot_on_step: false
+  screenshot_on_error: true
+  
+  # 截图存储
+  compress: true
+  max_size: "2MB"
+
+# 测试发现配置
+discovery:
+  # 搜索路径
+  search_paths:
+    - "tests"
+    - "test_cases"
+    - "."
+    
+  # 文件模式
+  patterns:
+    - "*.air"
+    - "*_test.air"
+    - "test_*.air"
+    
+  # 排除模式
+  exclude_patterns:
+    - ".*"
+    - "__pycache__"
+    - "*.pyc"
+    
+  # 递归搜索
+  recursive: true
+  max_depth: 5
+
+# 性能监控
+performance:
+  enable_monitoring: false
+  
+  # CPU 监控
+  monitor_cpu: true
+  cpu_threshold: 80
+  
+  # 内存监控
+  monitor_memory: true
+  memory_threshold: 80
+  
+  # 网络监控
+  monitor_network: false
+  
+  # 采样间隔（秒）
+  sample_interval: 5
+
+# 通知配置
+notifications:
+  # 邮件通知
+  email:
+    enabled: false
+    smtp_server: "smtp.example.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    from_address: "test@example.com"
+    to_addresses: []
+    
+  # Slack 通知
+  slack:
+    enabled: false
+    webhook_url: ""
+    channel: "#testing"
+    
+  # 企业微信通知
+  wechat:
+    enabled: false
+    webhook_url: ""
+
+# 数据库配置
+database:
+  # 测试结果存储
+  enabled: false
+  type: "sqlite"  # sqlite, mysql, postgresql
+  
+  # SQLite 配置
+  sqlite:
+    file: "test_results.db"
+    
+  # MySQL 配置
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "airtest"
+    username: ""
+    password: ""
+    
+  # PostgreSQL 配置
+  postgresql:
+    host: "localhost"
+    port: 5432
+    database: "airtest"
+    username: ""
+    password: ""
+
+# 云服务配置
+cloud:
+  # 云设备服务
+  device_farm:
+    enabled: false
+    provider: ""  # aws, azure, gcp
+    
+  # 云存储
+  storage:
+    enabled: false
+    provider: ""  # aws_s3, azure_blob, gcp_storage
+    bucket: ""
+    
+# 安全配置
+security:
+  # API 密钥管理
+  encrypt_credentials: true
+  credential_file: ".credentials"
+  
+  # 敏感数据处理
+  mask_sensitive_data: true
+  sensitive_keywords:
+    - "password"
+    - "token"
+    - "secret"
+    - "key"
+
+# 插件配置
+plugins:
+  # 启用的插件
+  enabled_plugins: []
+  
+  # 插件搜索路径
+  plugin_paths:
+    - "plugins"
+    - "extensions"
+
+# 缓存配置
+cache:
+  # 启用缓存
+  enabled: true
+  
+  # 缓存类型
+  type: "file"  # file, memory, redis
+  
+  # 文件缓存配置
+  file:
+    cache_dir: ".cache"
+    max_size: "100MB"
+    
+  # Redis 缓存配置
+  redis:
+    host: "localhost"
+    port: 6379
+    database: 0
