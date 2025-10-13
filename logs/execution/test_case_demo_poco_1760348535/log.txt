@@ -1,0 +1,1 @@
+{"tag": "function", "depth": 1, "time": 1760348536.089758, "data": {"name": "connect_device", "call_args": {"uri": "Android:///", "device": "R5CW23068CJ"}, "start_time": 1760348535.9871948, "ret": "<Android 'R5CW23068CJ'>", "end_time": 1760348536.0897431}}

@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "generated_at": "2025-10-13T17:26:18.294807",
+    "timestamp": "20251013_172618",
+    "total_cases": 1,
+    "framework_version": "1.0.0"
+  },
+  "summary": {
+    "total_cases": 1,
+    "successful_cases": 0,
+    "failed_cases": 1,
+    "fallback_cases": 0,
+    "total_steps": 11,
+    "successful_steps": 0,
+    "failed_steps": 11,
+    "fallback_steps": 0,
+    "total_execution_time": 0.0037469863891601562,
+    "success_rate": 0.0,
+    "fallback_rate": 0.0
+  },
+  "results": [
+    {
+      "case_name": 

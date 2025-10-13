@@ -1,0 +1,7 @@
+2025-10-13 17:23:31,628 - FusionFramework - INFO - 融合测试框架初始化完成
+2025-10-13 17:23:31,628 - FusionFramework - INFO - 开始发现测试用例，根目录: tests
+2025-10-13 17:23:31,629 - FusionFramework - INFO - 发现 1 个测试用例
+2025-10-13 17:23:31,629 - FusionFramework - INFO - 开始执行 1 个测试用例
+2025-10-13 17:23:31,629 - FusionFramework - INFO - 执行用例 1/1: test_case_demo
+2025-10-13 17:23:31,629 - FusionFramework - ERROR - 执行用例 test_case_demo 时发生错误: StepAlignment.align_steps() takes 1 positional argument but 2 were given
+2025-10-13 17:23:31,629 - FusionFramework - INFO - 测试执行完成，共执行 0 个用例

@@ -1,0 +1,46 @@
+{
+  "test_root_dir": "tests",
+  "execution_strategy": "auto",
+  "fallback_mode": "retry_then_fallback",
+  "parallel_execution": false,
+  "max_workers": 4,
+  "enable_performance_monitoring": true,
+  "debug_mode": false,
+  "save_intermediate_results": false,
+  "verbose_logging": false,
+  "retry": {
+    "max_retries": 2,
+    "retry_delay": 1.0,
+    "exponential_backoff": true
+  },
+  "timeout": {
+    "step_timeout": 30.0,
+    "case_timeout": 300.0,
+    "element_wait_timeout": 10.0
+  },
+  "alignment": {
+    "confidence_threshold": 0.7,
+    "max_step_distance": 3,
+    "enable_semantic_matching": true
+  },
+  "report": {
+    "output_dir": "reports",
+    "generate_html": true,
+    "generate_json": true,
+    "include_screenshots": true,
+    "include_logs": true
+  },
+  "device": {
+    "android_serial": null,
+    "ios_bundle_id": null,
+    "connect_timeout": 30.0,
+    "auto_connect": true
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file_output": true,
+    "console_output": true,
+    "log_dir": "logs"
+  }
+}
