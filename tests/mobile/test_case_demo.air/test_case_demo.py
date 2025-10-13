@@ -9,6 +9,7 @@ touch(Template(r"tpl1760170830132.png", record_pos=(-0.109, 0.276), resolution=(
 
 touch(Template(r"tpl1760170751771.png", record_pos=(-0.35, 0.874), resolution=(1080, 2340)))
 touch(Template(r"tpl1760170753763.png", record_pos=(-0.119, 0.877), resolution=(1080, 2340)))
+
 touch(Template(r"tpl1760170755526.png", record_pos=(0.137, 0.88), resolution=(1080, 2340)))
 touch(Template(r"tpl1760170757400.png", record_pos=(0.381, 0.884), resolution=(1080, 2340)))
 touch(Template(r"tpl1760170761966.png", record_pos=(0.002, 1.028), resolution=(1080, 2340)))

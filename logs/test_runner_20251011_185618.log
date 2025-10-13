@@ -1,7 +1,0 @@
-2025-10-11 18:56:18,788 - TestRunner - INFO - 开始扫描测试目录: tests/
-2025-10-11 18:56:18,790 - TestRunner - INFO - 发现 2 个测试项目
-2025-10-11 18:56:18,790 - TestRunner - INFO - 开始过滤测试，初始数量: 2
-2025-10-11 18:56:18,790 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
-2025-10-11 18:56:18,791 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: android:R5CW23068CJ, 并行: False
-2025-10-11 18:56:18,791 - TestRunner - INFO - 开始执行测试套件，并行模式: False
-2025-10-11 18:56:45,583 - TestRunner - INFO - 测试执行完成: 成功 2, 失败 0, 总耗时 26.79秒

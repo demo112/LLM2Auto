@@ -1,9 +1,0 @@
-2025-10-11 18:36:48,563 - TestRunner - INFO - 开始扫描测试目录: tests/
-2025-10-11 18:36:48,564 - TestRunner - INFO - 发现 2 个测试项目
-2025-10-11 18:36:48,565 - TestRunner - INFO - 开始过滤测试，初始数量: 2
-2025-10-11 18:36:48,565 - TestRunner - INFO - 按分类 'mobile' 过滤后: 2 个
-2025-10-11 18:36:48,565 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
-2025-10-11 18:36:48,565 - TestRunner - INFO - 开始执行测试套件，并行模式: False
-2025-10-11 18:36:50,487 - TestRunner - INFO - 测试执行完成: 成功 0, 失败 2, 总耗时 1.92秒
-2025-10-11 18:36:50,487 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179008'
-2025-10-11 18:36:50,488 - TestRunner - ERROR - 测试失败 移动应用UI自动化测试演示: [Errno 2] No such file or directory: 'logs/execution/移动应用UI自动化测试演示_1760179009'
