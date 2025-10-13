@@ -1,0 +1,40 @@
+2025-10-13 15:33:47,016 - airtest_framework.core.config - INFO - 日志系统初始化完成
+2025-10-13 15:33:47,016 - airtest_framework - INFO - Airtest 自动化测试框架初始化完成
+2025-10-13 15:33:47,016 - TestRunner - INFO - 开始扫描测试目录: tests/
+2025-10-13 15:33:47,016 - airtest_framework - INFO - 开始发现测试用例: tests/
+2025-10-13 15:33:47,016 - airtest_framework.core.discovery - INFO - 开始在目录 tests/ 中发现测试...
+2025-10-13 15:33:47,016 - airtest_framework.core.discovery - INFO - 发现 1 个 .air 项目
+2025-10-13 15:33:47,017 - airtest_framework.core.discovery - INFO - 成功发现 1 个测试用例
+2025-10-13 15:33:47,017 - airtest_framework - INFO - 发现 1 个测试用例
+2025-10-13 15:33:47,017 - TestRunner - INFO - 发现 1 个测试项目
+2025-10-13 15:33:47,017 - TestRunner - INFO - 开始执行测试，数量: 1, 设备: Android:///, 并行: False
+2025-10-13 15:33:47,037 - TestRunner - INFO - 检测到Android设备: ['R5CW23068CJ\tdevice']
+2025-10-13 15:33:47,037 - TestRunner - INFO - 开始执行测试套件，并行模式: False
+2025-10-13 15:33:47,037 - airtest_framework.core.executor - INFO - 开始执行测试套件，共 1 个测试
+2025-10-13 15:33:47,037 - airtest_framework.core.executor - INFO - 开始执行测试: 移动应用UI自动化测试演示
+2025-10-13 15:33:47,037 - airtest_framework.core.executor - INFO - 正在连接设备: Android:///
+2025-10-13 15:33:47,050 - airtest_framework.core.executor - INFO - 检测到设备: [('R5CW23068CJ', 'device')]
+2025-10-13 15:33:47,150 - airtest_framework.core.executor - INFO - 设备连接成功: <airtest.core.android.android.Android object at 0x10c172900>
+2025-10-13 15:33:47,150 - airtest_framework.core.executor - INFO - 日志目录创建成功: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760340827
+2025-10-13 15:33:47,150 - airtest_framework.core.executor - INFO - 设置工作目录: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air
+2025-10-13 15:33:47,244 - airtest.core.api - WARNING - Device:R5CW23068CJ updated <airtest.core.android.android.Android object at 0x10c172900> -> <airtest.core.android.android.Android object at 0x10c1ac190>
+2025-10-13 15:33:47,244 - airtest_framework.core.executor - INFO - Airtest环境设置成功: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/test_case_demo.py, 日志目录: /Users/cooperd/UNV/TraeProject/演示项目/logs/execution/移动应用UI自动化测试演示_1760340827
+2025-10-13 15:33:47,244 - airtest_framework.core.executor - INFO - 开始执行测试脚本: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/test_case_demo.py
+2025-10-13 15:33:47,245 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170824533.png)
+2025-10-13 15:33:47,820 - airtest.core.android.cap_methods.screen_proxy - ERROR - b''
+2025-10-13 15:33:47,820 - airtest.core.android.cap_methods.screen_proxy - ERROR - b"mv: bad '/data/local/tmp/minicap': Invalid argument\n"
+2025-10-13 15:33:47,820 - airtest.core.android.cap_methods.screen_proxy - ERROR - Minicap setup up failed!
+2025-10-13 15:33:48,576 - airtest.core.android.cap_methods.screen_proxy - ERROR - OSError('socket connection broken')
+2025-10-13 15:33:48,576 - airtest.core.android.cap_methods.screen_proxy - ERROR - Javacap setup up failed!
+2025-10-13 15:33:51,747 - airtest.core.android.rotation - INFO - update orientation None->0
+2025-10-13 15:33:53,458 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170830132.png)
+2025-10-13 15:33:54,223 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170751771.png)
+2025-10-13 15:33:55,123 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170753763.png)
+2025-10-13 15:33:56,223 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170755526.png)
+2025-10-13 15:33:57,033 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170757400.png)
+2025-10-13 15:33:57,918 - airtest.core.api - INFO - Try finding: Template(/Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/tpl1760170761966.png)
+2025-10-13 15:33:58,794 - airtest_framework.core.executor - INFO - 测试脚本执行完成: /Users/cooperd/UNV/TraeProject/演示项目/tests/mobile/test_case_demo.air/test_case_demo.py
+2025-10-13 15:33:59,042 - airtest_framework.core.executor - INFO - 测试执行成功: 移动应用UI自动化测试演示 (耗时: 11.76s)
+2025-10-13 15:33:59,042 - airtest_framework.core.executor - INFO - 测试套件执行完成，成功: 1/1
+2025-10-13 15:33:59,043 - TestRunner - INFO - 测试执行完成: 成功 1, 失败 0, 总耗时 12.03秒
+2025-10-13 15:33:59,044 - main - INFO - 程序执行完成，退出码: 0
