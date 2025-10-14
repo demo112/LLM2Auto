@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>步骤对齐可视化报告 - test_case_demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .step-pair {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .step-index {
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #495057;
+            min-width: 60px;
+        }
+        
+        .step-column {
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #e0e0e0;
+        }
+        
+        .step-column:last-child {
+            border-right: none;
+        }
+        
+        .step-column.airtest {
+            background: #e3f2fd;
+        }
+        
+        .step-column.poco {
+            background: #f3e5f5;
+        }
+        
+        .step-column.empty {
+            background: #f5f5f5;
+            color: #999;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-header {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .step-type {
+            background: #007bff;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .step-type.click { background: #28a745; }
+        .step-type.swipe { background: #ffc107; color: #333; }
+        .step-type.input { background: #17a2b8; }
+        .step-type.wait { background: #6c757d; }
+        .step-type.assert { background: #dc3545; }
+        .step-type.setup { background: #6f42c1; }
+        .step-type.other { background: #fd7e14; }
+        
+        .step-target {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 8px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        
+        .step-code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-top: 8px;
+            overflow-x: auto;
+        }
+        
+        .confidence {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+        
+        .confidence-score {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .confidence-score.high { color: #28a745; }
+        .confidence-score.medium { color: #ffc107; }
+        .confidence-score.low { color: #dc3545; }
+        
+        .confidence-label {
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .execution-result {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .execution-result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .execution-result.failed {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .execution-result.fallback {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .semantic-description {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-style: italic;
+            color: #495057;
+            text-align: center;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>步骤对齐可视化报告</h1>
+            <div class="subtitle">测试用例: test_case_demo</div>
+            <div class="subtitle">生成时间: 20251014_143111</div>
+        </div>
+        
+        <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value">11</div>
+                    <div class="stat-label">总步骤数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">完全对齐</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">部分对齐</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0.6</div>
+                    <div class="stat-label">平均置信度</div>
+                </div>
+            </div>
+            
+            
+        <div class="step-pair">
+            <div class="step-index">0</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type swipe">SWIPE</div>
+            <div class="step-target">目标: tpl1760170824533.png</div>
+            <div class="step-target">参数: {'vector': [-0.0265, -0.4774]}</div>
+            <div class="step-code">swipe(Template(r"tpl1760170824533.png", record_pos=(0.048, 0.655), resolution=(1080, 2340)), vector=[-0.0265, -0.4774])</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: com.android.systemui:id/home</div>
+            
+            <div class="step-code">poco("com.android.systemui:id/home").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score low">0.3</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 5.91s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            swipe操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">1</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170830132.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170830132.png", record_pos=(-0.109, 0.276), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type swipe">SWIPE</div>
+            <div class="step-target">目标: com.android.systemui:id/home</div>
+            <div class="step-target">参数: {'vector': [-0.3386, -0.7387]}</div>
+            <div class="step-code">poco("com.android.systemui:id/home").swipe([-0.3386, -0.7387])</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score low">0.3</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 0.76s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">2</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170751771.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170751771.png", record_pos=(-0.35, 0.874), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type wait">WAIT</div>
+            <div class="step-target">目标: time</div>
+            
+            <div class="step-code">time.sleep(3)</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score low">0.3</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 0.95s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">3</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170753763.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170753763.png", record_pos=(-0.119, 0.877), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: text="Youkey Life"</div>
+            <div class="step-target">参数: {'text': 'Youkey Life'}</div>
+            <div class="step-code">poco(text="Youkey Life").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score high">0.9</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 1.10s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">4</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170755526.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170755526.png", record_pos=(0.137, 0.88), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: 家庭\n第 1 个标签，共 4 个</div>
+            
+            <div class="step-code">poco("家庭\n第 1 个标签，共 4 个").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score high">0.9</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 0.90s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">5</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170757400.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170757400.png", record_pos=(0.381, 0.884), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: 事件\n第 2 个标签，共 4 个</div>
+            
+            <div class="step-code">poco("事件\n第 2 个标签，共 4 个").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score high">0.9</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 0.85s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">6</div>
+            
+        <div class="step-column airtest">
+            <div class="step-header">AIRTEST 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: tpl1760170761966.png</div>
+            
+            <div class="step-code">touch(Template(r"tpl1760170761966.png", record_pos=(0.002, 1.028), resolution=(1080, 2340)))</div>
+        </div>
+        
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: 安全模式\n第 3 个标签，共 4 个</div>
+            
+            <div class="step-code">poco("安全模式\n第 3 个标签，共 4 个").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score high">0.9</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result success">
+                <strong>执行结果:</strong> success<br>
+                <strong>执行时间:</strong> 0.90s<br>
+                <strong>使用策略:</strong> airtest<br>
+                
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (Airtest + Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">7</div>
+            <div class="step-column empty">无Airtest步骤</div>
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: 账号\n第 4 个标签，共 4 个</div>
+            
+            <div class="step-code">poco("账号\n第 4 个标签，共 4 个").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score medium">0.5</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result failed">
+                <strong>执行结果:</strong> failed<br>
+                <strong>执行时间:</strong> 1.01s<br>
+                <strong>使用策略:</strong> poco<br>
+                <strong>使用回退:</strong> 是<br>
+                <strong>错误信息:</strong> 找不到元素: 账号\n第 4 个标签，共 4 个
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (仅Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">8</div>
+            <div class="step-column empty">无Airtest步骤</div>
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: 家庭\n第 1 个标签，共 4 个</div>
+            
+            <div class="step-code">poco("家庭\n第 1 个标签，共 4 个").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score medium">0.5</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result failed">
+                <strong>执行结果:</strong> failed<br>
+                <strong>执行时间:</strong> 0.02s<br>
+                <strong>使用策略:</strong> poco<br>
+                <strong>使用回退:</strong> 是<br>
+                <strong>错误信息:</strong> 找不到元素: 家庭\n第 1 个标签，共 4 个
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (仅Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">9</div>
+            <div class="step-column empty">无Airtest步骤</div>
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: com.android.systemui:id/back</div>
+            
+            <div class="step-code">poco("com.android.systemui:id/back").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score medium">0.5</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result fallback">
+                <strong>执行结果:</strong> fallback<br>
+                <strong>执行时间:</strong> 1.96s<br>
+                <strong>使用策略:</strong> poco<br>
+                <strong>使用回退:</strong> 是<br>
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (仅Poco)
+        </div>
+        
+        <div class="step-pair">
+            <div class="step-index">10</div>
+            <div class="step-column empty">无Airtest步骤</div>
+            
+        <div class="step-column poco">
+            <div class="step-header">POCO 步骤</div>
+            <div class="step-type click">CLICK</div>
+            <div class="step-target">目标: com.android.systemui:id/back</div>
+            
+            <div class="step-code">poco("com.android.systemui:id/back").click()</div>
+        </div>
+        
+            <div class="confidence">
+                <div class="confidence-score medium">0.5</div>
+                <div class="confidence-label">置信度</div>
+                
+            <div class="execution-result fallback">
+                <strong>执行结果:</strong> fallback<br>
+                <strong>执行时间:</strong> 1.98s<br>
+                <strong>使用策略:</strong> poco<br>
+                <strong>使用回退:</strong> 是<br>
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="semantic-description">
+            click操作 (仅Poco)
+        </div>
+        
+        </div>
+    </div>
+</body>
+</html>

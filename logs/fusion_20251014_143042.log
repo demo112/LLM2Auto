@@ -1,0 +1,15 @@
+2025-10-14 14:30:42,126 - FusionFramework - INFO - 融合测试框架初始化完成
+2025-10-14 14:30:42,126 - FusionFramework - INFO - 开始发现测试用例，根目录: tests
+2025-10-14 14:30:42,127 - FusionFramework - INFO - 发现 1 个测试用例
+2025-10-14 14:30:42,127 - FusionFramework - INFO - 开始执行 1 个测试用例
+2025-10-14 14:30:42,127 - FusionFramework - INFO - 正在设置执行环境...
+2025-10-14 14:30:54,709 - FusionFramework - INFO - 执行环境设置完成
+2025-10-14 14:30:54,710 - FusionFramework - INFO - 执行用例 1/1: test_case_demo
+2025-10-14 14:31:11,060 - FusionFramework - INFO - 已生成对齐报告: reports/alignment_report_test_case_demo_20251014_143111.html
+2025-10-14 14:31:11,061 - FusionFramework - INFO - ✓ test_case_demo: 9/11 步骤成功 (16.35s)
+2025-10-14 14:31:11,061 - FusionFramework - INFO - 测试执行完成，共执行 1 个用例
+2025-10-14 14:31:11,061 - FusionFramework - INFO - 开始生成测试报告
+2025-10-14 14:31:11,061 - FusionFramework - INFO - 测试报告生成完成:
+2025-10-14 14:31:11,061 - FusionFramework - INFO -   JSON: reports/fusion_report_20251014_143111.json
+2025-10-14 14:31:11,061 - FusionFramework - INFO -   HTML: reports/fusion_report_20251014_143111.html
+2025-10-14 14:31:11,061 - FusionFramework - INFO - 完整测试套件执行完成，总耗时: 28.94秒

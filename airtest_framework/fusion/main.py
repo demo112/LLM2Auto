@@ -11,11 +11,24 @@ import logging
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 
-from .config import FusionConfig, load_config, validate_config
-from .discovery import TestCaseDiscovery, TestCaseInfo
-from .alignment import StepAlignment
-from .executor import MultiDimensionExecutor, FusionExecutionResult
-from .reporter import FusionReporter
+# 添加项目根目录到Python路径，支持直接运行
+if __name__ == '__main__':
+    project_root = Path(__file__).parent.parent.parent
+    sys.path.insert(0, str(project_root))
+
+try:
+    from .config import FusionConfig, load_config, validate_config
+    from .discovery import TestCaseDiscovery, TestCaseInfo
+    from .alignment import StepAlignment
+    from .executor import MultiDimensionExecutor, FusionExecutionResult
+    from .reporter import FusionReporter
+except ImportError:
+    # 如果相对导入失败，尝试绝对导入
+    from airtest_framework.fusion.config import FusionConfig, load_config, validate_config
+    from airtest_framework.fusion.discovery import TestCaseDiscovery, TestCaseInfo
+    from airtest_framework.fusion.alignment import StepAlignment
+    from airtest_framework.fusion.executor import MultiDimensionExecutor, FusionExecutionResult
+    from airtest_framework.fusion.reporter import FusionReporter
 
 
 class FusionTestFramework:
@@ -129,6 +142,16 @@ class FusionTestFramework:
         
         self.logger.info(f"开始执行 {len(test_cases)} 个测试用例")
         
+        # 设置执行环境（设备连接和驱动初始化）
+        try:
+            self.logger.info("正在设置执行环境...")
+            device_uri = getattr(self.config, 'device_uri', 'Android:///')
+            self.executor.setup_environment(device_uri)
+            self.logger.info("执行环境设置完成")
+        except Exception as e:
+            self.logger.warning(f"环境设置失败，将尝试使用模拟模式: {e}")
+            # 继续执行，但可能会使用模拟模式
+        
         results = []
         
         for i, test_case in enumerate(test_cases, 1):
@@ -150,6 +173,17 @@ class FusionTestFramework:
                 # 执行用例
                 result = self.executor.execute_fusion_case(test_case.name, aligned_steps)
                 results.append(result)
+                
+                # 生成可视化对齐报告
+                try:
+                    alignment_report_path = self.reporter.generate_alignment_report(
+                        test_case.name, 
+                        aligned_steps, 
+                        result.step_results
+                    )
+                    self.logger.info(f"已生成对齐报告: {alignment_report_path}")
+                except Exception as e:
+                    self.logger.warning(f"生成对齐报告失败: {e}")
                 
                 # 打印执行结果
                 status = "✓" if result.overall_result.value in ['success', 'fallback'] else "✗"
@@ -267,6 +301,13 @@ class FusionTestFramework:
 def main():
     """命令行入口函数"""
     import argparse
+    import os
+    
+    # 如果直接运行main.py，切换到项目根目录
+    if __name__ == '__main__':
+        project_root = Path(__file__).parent.parent.parent
+        os.chdir(project_root)
+        print(f"工作目录已切换到: {project_root}")
     
     parser = argparse.ArgumentParser(description='融合测试框架')
     parser.add_argument('--config', '-c', help='配置文件路径')

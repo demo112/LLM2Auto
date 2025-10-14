@@ -1,0 +1,11 @@
+2025-10-13 19:38:45,016 - FusionFramework - INFO - 融合测试框架初始化完成
+2025-10-13 19:38:45,016 - FusionFramework - INFO - 开始发现测试用例，根目录: tests
+2025-10-13 19:38:45,017 - FusionFramework - INFO - 发现 1 个测试用例
+2025-10-13 19:38:45,018 - FusionFramework - INFO - 开始执行 1 个测试用例
+2025-10-13 19:38:45,018 - FusionFramework - INFO - 执行用例 1/1: test_case_demo
+2025-10-13 19:38:45,020 - FusionFramework - INFO - ✗ test_case_demo: 0/11 步骤成功 (0.00s)
+2025-10-13 19:38:45,020 - FusionFramework - INFO - 测试执行完成，共执行 1 个用例
+2025-10-13 19:38:45,020 - FusionFramework - INFO - 开始生成测试报告
+2025-10-13 19:38:45,021 - FusionFramework - INFO - 测试报告生成完成:
+2025-10-13 19:38:45,021 - FusionFramework - INFO -   JSON: reports/fusion_report_20251013_193845.json
+2025-10-13 19:38:45,021 - FusionFramework - INFO -   HTML: reports/fusion_report_20251013_193845.html

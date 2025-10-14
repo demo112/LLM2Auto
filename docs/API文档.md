@@ -268,66 +268,7 @@ def execute_fusion_case(self,
 
 ## 3. 工具类API
 
-### 3.1 SmartIconMatcher 类
-
-智能图标匹配工具。
-
-#### 初始化
-```python
-from airtest_framework.utils.smart_icon_matcher import SmartIconMatcher
-
-matcher = SmartIconMatcher()
-```
-
-#### multi_state_touch()
-多状态图标点击。
-
-```python
-def multi_state_touch(self, 
-                     icon_states: List[str],
-                     timeout: float = 10.0) -> bool
-```
-
-**参数**:
-- `icon_states` (List[str]): 图标状态列表
-- `timeout` (float): 超时时间，默认10.0秒
-
-**返回值**:
-- `bool`: 是否点击成功
-
-#### get_current_state()
-获取当前状态。
-
-```python
-def get_current_state(self, 
-                     state_mapping: Dict[str, str]) -> Optional[str]
-```
-
-**参数**:
-- `state_mapping` (Dict[str, str]): 状态映射字典
-
-**返回值**:
-- `Optional[str]`: 当前状态名称
-
-#### switch_to_state()
-切换到指定状态。
-
-```python
-def switch_to_state(self,
-                   target_state: str,
-                   state_mapping: Dict[str, str],
-                   max_attempts: int = 3) -> bool
-```
-
-**参数**:
-- `target_state` (str): 目标状态
-- `state_mapping` (Dict[str, str]): 状态映射字典
-- `max_attempts` (int): 最大尝试次数，默认3
-
-**返回值**:
-- `bool`: 是否切换成功
-
-### 3.2 DeviceUtils 类
+### 3.1 DeviceUtils 类
 
 设备管理工具。
 
@@ -527,35 +468,7 @@ print(f"HTML报告: {report_info['html']}")
 print(f"JSON报告: {report_info['json']}")
 ```
 
-### 7.3 智能图标匹配示例
 
-```python
-from airtest_framework.utils.smart_icon_matcher import SmartIconMatcher
-
-matcher = SmartIconMatcher()
-
-# 多状态图标点击
-favorite_states = [
-    "favorite_selected.png",
-    "favorite_unselected.png"
-]
-
-if matcher.multi_state_touch(favorite_states):
-    print("成功点击收藏按钮")
-
-# 状态检测和切换
-switch_states = {
-    "on": "switch_on.png",
-    "off": "switch_off.png"
-}
-
-current_state = matcher.get_current_state(switch_states)
-print(f"当前状态: {current_state}")
-
-# 切换到目标状态
-if matcher.switch_to_state("on", switch_states):
-    print("成功切换到开启状态")
-```
 
 ## 8. 变更记录
 

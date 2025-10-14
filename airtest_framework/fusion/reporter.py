@@ -13,6 +13,7 @@ from typing import List, Dict, Any
 from dataclasses import asdict
 
 from .executor import FusionExecutionResult, StepExecutionResult, ExecutionResult
+from .alignment import AlignedStepPair, ActionStep, ActionType
 
 
 class FusionReporter:
@@ -53,6 +54,31 @@ class FusionReporter:
             'json': str(json_path),
             'html': str(html_path)
         }
+    
+    def generate_alignment_report(self, 
+                                case_name: str,
+                                aligned_steps: List[AlignedStepPair],
+                                execution_results: List[StepExecutionResult] = None) -> str:
+        """
+        生成可视化对齐报告
+        
+        Args:
+            case_name: 测试用例名称
+            aligned_steps: 对齐的步骤对列表
+            execution_results: 执行结果列表（可选）
+            
+        Returns:
+            str: 生成的HTML报告文件路径
+        """
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")# 创建HTML内容
+        html_content = self._create_alignment_html(case_name, aligned_steps, timestamp, execution_results)
+        
+        html_path = self.output_dir / f"alignment_report_{case_name}_{timestamp}.html"
+        
+        with open(html_path, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        
+        return str(html_path)
     
     def _generate_json_report(self, 
                             results: List[FusionExecutionResult], 
@@ -455,3 +481,342 @@ class FusionReporter:
             status = "✓" if result.overall_result == ExecutionResult.SUCCESS else \
                     "⚠" if result.overall_result == ExecutionResult.FALLBACK else "✗"
             print(f"{status} {result.case_name}: {result.successful_steps}/{result.total_steps} 步骤成功")
+    
+    def _create_alignment_html(self, 
+                             case_name: str,
+                             aligned_steps: List[AlignedStepPair],
+                             timestamp: str,
+                             execution_results: List[StepExecutionResult] = None) -> str:
+        """创建对齐可视化HTML内容"""
+        
+        # 创建执行结果映射
+        result_map = {}
+        if execution_results:
+            for result in execution_results:
+                result_map[result.step_index] = result
+        
+        steps_html = ""
+        for i, step_pair in enumerate(aligned_steps):
+            execution_result = result_map.get(i)
+            steps_html += self._create_step_pair_html(i, step_pair, execution_result)
+        
+        return f"""
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>步骤对齐可视化报告 - {case_name}</title>
+    <style>
+        body {{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }}
+        
+        .container {{
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }}
+        
+        .header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }}
+        
+        .header h1 {{
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }}
+        
+        .header .subtitle {{
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }}
+        
+        .content {{
+            padding: 30px;
+        }}
+        
+        .step-pair {{
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }}
+        
+        .step-index {{
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #495057;
+            min-width: 60px;
+        }}
+        
+        .step-column {{
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #e0e0e0;
+        }}
+        
+        .step-column:last-child {{
+            border-right: none;
+        }}
+        
+        .step-column.airtest {{
+            background: #e3f2fd;
+        }}
+        
+        .step-column.poco {{
+            background: #f3e5f5;
+        }}
+        
+        .step-column.empty {{
+            background: #f5f5f5;
+            color: #999;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }}
+        
+        .step-header {{
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }}
+        
+        .step-type {{
+            background: #007bff;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 8px;
+        }}
+        
+        .step-type.click {{ background: #28a745; }}
+        .step-type.swipe {{ background: #ffc107; color: #333; }}
+        .step-type.input {{ background: #17a2b8; }}
+        .step-type.wait {{ background: #6c757d; }}
+        .step-type.assert {{ background: #dc3545; }}
+        .step-type.setup {{ background: #6f42c1; }}
+        .step-type.other {{ background: #fd7e14; }}
+        
+        .step-target {{
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 8px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+        }}
+        
+        .step-code {{
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            margin-top: 8px;
+            overflow-x: auto;
+        }}
+        
+        .confidence {{
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }}
+        
+        .confidence-score {{
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }}
+        
+        .confidence-score.high {{ color: #28a745; }}
+        .confidence-score.medium {{ color: #ffc107; }}
+        .confidence-score.low {{ color: #dc3545; }}
+        
+        .confidence-label {{
+            font-size: 0.8em;
+            color: #666;
+        }}
+        
+        .execution-result {{
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }}
+        
+        .execution-result.success {{
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }}
+        
+        .execution-result.failed {{
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }}
+        
+        .execution-result.fallback {{
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }}
+        
+        .semantic-description {{
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-style: italic;
+            color: #495057;
+            text-align: center;
+        }}
+        
+        .stats {{
+            display: flex;
+            justify-content: space-around;
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }}
+        
+        .stat-item {{
+            text-align: center;
+        }}
+        
+        .stat-value {{
+            font-size: 2em;
+            font-weight: bold;
+            color: #007bff;
+        }}
+        
+        .stat-label {{
+            color: #666;
+            font-size: 0.9em;
+        }}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>步骤对齐可视化报告</h1>
+            <div class="subtitle">测试用例: {case_name}</div>
+            <div class="subtitle">生成时间: {timestamp}</div>
+        </div>
+        
+        <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value">{len(aligned_steps)}</div>
+                    <div class="stat-label">总步骤数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{sum(1 for step in aligned_steps if step.airtest_step and step.poco_step)}</div>
+                    <div class="stat-label">完全对齐</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{sum(1 for step in aligned_steps if (step.airtest_step is None) or (step.poco_step is None))}</div>
+                    <div class="stat-label">部分对齐</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{sum(step.alignment_confidence for step in aligned_steps) / len(aligned_steps) if aligned_steps else 0:.1f}</div>
+                    <div class="stat-label">平均置信度</div>
+                </div>
+            </div>
+            
+            {steps_html}
+        </div>
+    </div>
+</body>
+</html>
+"""
+    
+    def _create_step_pair_html(self, 
+                             index: int, 
+                             step_pair: AlignedStepPair,
+                             execution_result: StepExecutionResult = None) -> str:
+        """创建单个步骤对的HTML"""
+        
+        # Airtest步骤HTML
+        airtest_html = self._create_step_html(step_pair.airtest_step, "airtest") if step_pair.airtest_step else '<div class="step-column empty">无Airtest步骤</div>'
+        
+        # Poco步骤HTML
+        poco_html = self._create_step_html(step_pair.poco_step, "poco") if step_pair.poco_step else '<div class="step-column empty">无Poco步骤</div>'
+        
+        # 置信度
+        confidence = step_pair.alignment_confidence
+        confidence_class = "high" if confidence >= 0.8 else "medium" if confidence >= 0.5 else "low"
+        
+        # 执行结果
+        execution_html = ""
+        if execution_result:
+            result_class = execution_result.result.value
+            execution_html = f'''
+            <div class="execution-result {result_class}">
+                <strong>执行结果:</strong> {execution_result.result.value}<br>
+                <strong>执行时间:</strong> {execution_result.execution_time:.2f}s<br>
+                <strong>使用策略:</strong> {execution_result.used_strategy}<br>
+                {'<strong>使用回退:</strong> 是<br>' if execution_result.fallback_used else ''}
+                {f'<strong>错误信息:</strong> {execution_result.error_message}' if execution_result.error_message else ''}
+            </div>
+            '''
+        
+        return f'''
+        <div class="step-pair">
+            <div class="step-index">{index}</div>
+            {airtest_html}
+            {poco_html}
+            <div class="confidence">
+                <div class="confidence-score {confidence_class}">{confidence:.1f}</div>
+                <div class="confidence-label">置信度</div>
+                {execution_html}
+            </div>
+        </div>
+        <div class="semantic-description">
+            {step_pair.semantic_description}
+        </div>
+        '''
+    
+    def _create_step_html(self, step: ActionStep, step_type: str) -> str:
+        """创建单个步骤的HTML"""
+        return f'''
+        <div class="step-column {step_type}">
+            <div class="step-header">{step_type.upper()} 步骤</div>
+            <div class="step-type {step.action_type.value}">{step.action_type.value.upper()}</div>
+            <div class="step-target">目标: {step.target}</div>
+            {f'<div class="step-target">参数: {step.parameters}</div>' if step.parameters else ''}
+            <div class="step-code">{step.original_code}</div>
+        </div>
+        '''
