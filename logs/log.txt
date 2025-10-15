@@ -1,1 +1,1 @@
-{"tag": "function", "depth": 1, "time": 1760515367.78587, "data": {"name": "connect_device", "call_args": {"uri": "Android:///R5CW23068CJ", "device": "R5CW23068CJ"}, "start_time": 1760515367.647243, "ret": "<Android 'R5CW23068CJ'>", "end_time": 1760515367.7858481}}
+{"tag": "function", "depth": 1, "time": 1760516101.893458, "data": {"name": "connect_device", "call_args": {"uri": "Android:///R5CW23068CJ", "device": "R5CW23068CJ"}, "start_time": 1760516101.691642, "ret": "<Android 'R5CW23068CJ'>", "end_time": 1760516101.893431}}
