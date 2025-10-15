@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "name": "test_case_demo",
+    "version": "1.0.0",
+    "created_at": "2025-10-14T20:25:36.914429",
+    "updated_at": "2025-10-14T20:25:36.914429",
+    "airtest_source": "tests/mobile/test_case_demo.air/test_case_demo.py",
+    "poco_source": "tests/mobile/test_case_demo_poco.air/test_case_demo_poco.py",
+    "airtest_hash": "ded7af363a9cd8076485bfde260a0edd",
+    "poco_hash": "793f821ea034336ba02293e00cbb390b",
+    "alignment_algorithm": "qwen_enhanced_v1",
+    "total_steps": 11,
+    "matched_steps": 7,
+    "confidence_avg": 0.3886255723352498
+  },
+  "steps": [
+    {
+      "step_id": "fusion_step_001",
+      "description": "融合操作: swipe",
+      "operation_type": "swipe",
+      "target_element": "tpl1760170824533.png",
+      "airtest_code": {
+        "content": "swipe(Template(r\"tpl1760170824533.png\", record_pos=(0.048, 0.655), resolution=(1080, 2340)), vector=[-0.0265, -0.4774])",
+        "start_line": 7,
+        "end_line": 7,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "swipe(Template(r\"tpl1760170824533.png\", record_pos=(0.048, 0.655), resolution=(1080, 2340)), vector=[-0.0265, -0.4774])\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"com.android.systemui:id/home\").swipe([-0.3386, -0.7387])",
+        "start_line": 23,
+        "end_line": 23,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"com.android.systemui:id/home\").swipe([-0.3386, -0.7387])\n"
+        ]
+      },
+      "confidence_score": 0.645,
+      "semantic_tags": [
+        "gesture",
+        "navigation",
+        "swipe"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_002",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170830132.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170830132.png\", record_pos=(-0.109, 0.276), resolution=(1080, 2340)))",
+        "start_line": 8,
+        "end_line": 8,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170830132.png\", record_pos=(-0.109, 0.276), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(text=\"Youkey Life\").click()",
+        "start_line": 26,
+        "end_line": 26,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(text=\"Youkey Life\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6058064516129033,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_003",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170751771.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170751771.png\", record_pos=(-0.35, 0.874), resolution=(1080, 2340)))",
+        "start_line": 10,
+        "end_line": 10,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170751771.png\", record_pos=(-0.35, 0.874), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"家庭\\n第 1 个标签，共 4 个\").click()",
+        "start_line": 28,
+        "end_line": 28,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"家庭\\n第 1 个标签，共 4 个\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6048648648648649,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_004",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170753763.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170753763.png\", record_pos=(-0.119, 0.877), resolution=(1080, 2340)))",
+        "start_line": 11,
+        "end_line": 11,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170753763.png\", record_pos=(-0.119, 0.877), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"事件\\n第 2 个标签，共 4 个\").click()",
+        "start_line": 29,
+        "end_line": 29,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"事件\\n第 2 个标签，共 4 个\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6048648648648649,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_005",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170757400.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170757400.png\", record_pos=(0.381, 0.884), resolution=(1080, 2340)))",
+        "start_line": 14,
+        "end_line": 14,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170757400.png\", record_pos=(0.381, 0.884), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"账号\\n第 4 个标签，共 4 个\").click()",
+        "start_line": 31,
+        "end_line": 31,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"账号\\n第 4 个标签，共 4 个\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6048648648648649,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_006",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170761966.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170761966.png\", record_pos=(0.002, 1.028), resolution=(1080, 2340)))",
+        "start_line": 15,
+        "end_line": 15,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170761966.png\", record_pos=(0.002, 1.028), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"家庭\\n第 1 个标签，共 4 个\").click()",
+        "start_line": 32,
+        "end_line": 32,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"家庭\\n第 1 个标签，共 4 个\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6048648648648649,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_007",
+      "description": "融合操作: click",
+      "operation_type": "click",
+      "target_element": "tpl1760170755526.png",
+      "airtest_code": {
+        "content": "touch(Template(r\"tpl1760170755526.png\", record_pos=(0.137, 0.88), resolution=(1080, 2340)))",
+        "start_line": 13,
+        "end_line": 13,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "touch(Template(r\"tpl1760170755526.png\", record_pos=(0.137, 0.88), resolution=(1080, 2340)))\n"
+        ]
+      },
+      "poco_code": {
+        "content": "poco(\"安全模式\\n第 3 个标签，共 4 个\").click()",
+        "start_line": 30,
+        "end_line": 30,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"安全模式\\n第 3 个标签，共 4 个\").click()\n"
+        ]
+      },
+      "confidence_score": 0.6046153846153846,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "中等置信度匹配：操作类型相似"
+    },
+    {
+      "step_id": "fusion_step_008",
+      "description": "初始化设置",
+      "operation_type": "setup",
+      "target_element": "",
+      "airtest_code": {
+        "content": "auto_setup(__file__)",
+        "start_line": 6,
+        "end_line": 6,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "auto_setup(__file__)\n"
+        ]
+      },
+      "poco_code": null,
+      "confidence_score": 0.0,
+      "semantic_tags": [
+        "setup"
+      ],
+      "alignment_reason": "仅Airtest实现"
+    },
+    {
+      "step_id": "fusion_step_009",
+      "description": "点击 com.android.systemui:id/home",
+      "operation_type": "click",
+      "target_element": "com.android.systemui:id/home",
+      "airtest_code": null,
+      "poco_code": {
+        "content": "poco(\"com.android.systemui:id/home\").click()",
+        "start_line": 22,
+        "end_line": 22,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"com.android.systemui:id/home\").click()\n"
+        ]
+      },
+      "confidence_score": 0.0,
+      "semantic_tags": [
+        "navigation",
+        "click"
+      ],
+      "alignment_reason": "仅Poco实现"
+    },
+    {
+      "step_id": "fusion_step_010",
+      "description": "点击 com.android.systemui:id/back",
+      "operation_type": "click",
+      "target_element": "com.android.systemui:id/back",
+      "airtest_code": null,
+      "poco_code": {
+        "content": "poco(\"com.android.systemui:id/back\").click()",
+        "start_line": 33,
+        "end_line": 33,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"com.android.systemui:id/back\").click()\n"
+        ]
+      },
+      "confidence_score": 0.0,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "仅Poco实现"
+    },
+    {
+      "step_id": "fusion_step_011",
+      "description": "点击 com.android.systemui:id/back",
+      "operation_type": "click",
+      "target_element": "com.android.systemui:id/back",
+      "airtest_code": null,
+      "poco_code": {
+        "content": "poco(\"com.android.systemui:id/back\").click()",
+        "start_line": 34,
+        "end_line": 34,
+        "imports": [],
+        "variables": {},
+        "raw_lines": [
+          "poco(\"com.android.systemui:id/back\").click()\n"
+        ]
+      },
+      "confidence_score": 0.0,
+      "semantic_tags": [
+        "click"
+      ],
+      "alignment_reason": "仅Poco实现"
+    }
+  ]
+}

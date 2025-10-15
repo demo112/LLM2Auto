@@ -16,18 +16,27 @@ if __name__ == '__main__':
     project_root = Path(__file__).parent.parent.parent
     sys.path.insert(0, str(project_root))
 
+# 始终尝试相对导入，失败则回退到绝对导入
 try:
     from .config import FusionConfig, load_config, validate_config
     from .discovery import TestCaseDiscovery, TestCaseInfo
-    from .alignment import StepAlignment
-    from .executor import MultiDimensionExecutor, FusionExecutionResult
+    from .enhanced_parser import EnhancedScriptParser
+    from .intelligent_alignment import align_script_pair
+    from .persistence import FusionPersistence, create_fusion_script_from_alignment
+    from .failover_executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
     from .reporter import FusionReporter
+    # 报告器期望的结果类型（来自 executor）
+    from .executor import ExecutionResult as ExecExecutionResult
+    from .executor import StepExecutionResult as ExecStepExecutionResult
+    from .executor import FusionExecutionResult as ExecFusionExecutionResult
 except ImportError:
     # 如果相对导入失败，尝试绝对导入
     from airtest_framework.fusion.config import FusionConfig, load_config, validate_config
     from airtest_framework.fusion.discovery import TestCaseDiscovery, TestCaseInfo
-    from airtest_framework.fusion.alignment import StepAlignment
-    from airtest_framework.fusion.executor import MultiDimensionExecutor, FusionExecutionResult
+    from airtest_framework.fusion.enhanced_parser import EnhancedScriptParser
+    from airtest_framework.fusion.intelligent_alignment import align_script_pair
+    from airtest_framework.fusion.persistence import FusionPersistence, create_fusion_script_from_alignment
+    from airtest_framework.fusion.failover_executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
     from airtest_framework.fusion.reporter import FusionReporter
 
 
@@ -41,14 +50,23 @@ class FusionTestFramework:
         Args:
             config: 配置对象，如果为None则加载默认配置
         """
-        self.config = config or load_config()
+        # 加载配置
+        if config is None:
+            config = load_config()
+        
+        # 验证配置
+        if not validate_config(config):
+            raise ValueError("配置验证失败")
+        
+        self.config = config
         self.logger = self._setup_logging()
         
-        # 初始化组件
-        self.discovery = None  # 延迟初始化，因为需要测试根目录
-        self.alignment = StepAlignment()
-        self.executor = MultiDimensionExecutor(strategy=self.config.execution_strategy)
-        self.reporter = FusionReporter(self.config.report.output_dir)
+        # 初始化核心组件
+        self.discovery = TestCaseDiscovery(config.test_root_dir)
+        self.parser = EnhancedScriptParser()
+        self.persistence = FusionPersistence("fusion_scripts")
+        self.executor = FailoverExecutor()
+        self.reporter = FusionReporter()
         
         self.logger.info("融合测试框架初始化完成")
     
@@ -110,192 +128,316 @@ class FusionTestFramework:
         
         return test_cases
     
-    def run_test_cases(self, 
-                      test_cases: Optional[List[TestCaseInfo]] = None,
-                      case_filter: Optional[str] = None) -> List[FusionExecutionResult]:
+    async def process_fusion(self, test_case: TestCaseInfo, qwen_api_key: Optional[str] = None) -> str:
         """
-        执行测试用例
+        处理融合脚本
         
         Args:
-            test_cases: 要执行的测试用例列表，如果为None则自动发现
-            case_filter: 用例名称过滤器（支持通配符）
+            test_case: 测试用例信息
+            qwen_api_key: Qwen API密钥
             
         Returns:
-            List[FusionExecutionResult]: 执行结果列表
+            str: 融合脚本文件名
         """
-        # 如果没有提供测试用例，则自动发现
-        if test_cases is None:
-            test_cases = self.discover_test_cases()
+        import os
+        import asyncio
         
-        # 应用过滤器
-        if case_filter:
-            import fnmatch
-            test_cases = [
-                case for case in test_cases 
-                if fnmatch.fnmatch(case.case_name, case_filter)
-            ]
-            self.logger.info(f"应用过滤器 '{case_filter}' 后，剩余 {len(test_cases)} 个用例")
+        if not (test_case.airtest_path and test_case.poco_path):
+            raise ValueError("测试用例缺少Airtest或Poco实现")
         
-        if not test_cases:
-            self.logger.warning("没有找到要执行的测试用例")
-            return []
+        self.logger.info(f"开始处理融合脚本: {test_case.name}")
         
-        self.logger.info(f"开始执行 {len(test_cases)} 个测试用例")
-        
-        # 设置执行环境（设备连接和驱动初始化）
         try:
-            self.logger.info("正在设置执行环境...")
-            device_uri = getattr(self.config, 'device_uri', 'Android:///')
-            self.executor.setup_environment(device_uri)
-            self.logger.info("执行环境设置完成")
-        except Exception as e:
-            self.logger.warning(f"环境设置失败，将尝试使用模拟模式: {e}")
-            # 继续执行，但可能会使用模拟模式
-        
-        results = []
-        
-        for i, test_case in enumerate(test_cases, 1):
-            self.logger.info(f"执行用例 {i}/{len(test_cases)}: {test_case.name}")
+            # 解析脚本获取步骤
+            airtest_metadata, airtest_steps = self.parser.parse_script_file(test_case.airtest_path)
+            poco_metadata, poco_steps = self.parser.parse_script_file(test_case.poco_path)
             
-            try:
-                # 步骤对齐
-                if test_case.airtest_path:
-                    self.alignment.parse_airtest_script(test_case.airtest_path)
-                if test_case.poco_path:
-                    self.alignment.parse_poco_script(test_case.poco_path)
-                
-                aligned_steps = self.alignment.align_steps()
-                
-                if not aligned_steps:
-                    self.logger.warning(f"用例 {test_case.name} 没有找到可对齐的步骤")
-                    continue
-                
-                # 执行用例
-                result = self.executor.execute_fusion_case(test_case.name, aligned_steps)
-                results.append(result)
-                
-                # 生成可视化对齐报告
-                try:
-                    alignment_report_path = self.reporter.generate_alignment_report(
-                        test_case.name, 
-                        aligned_steps, 
-                        result.step_results
-                    )
-                    self.logger.info(f"已生成对齐报告: {alignment_report_path}")
-                except Exception as e:
-                    self.logger.warning(f"生成对齐报告失败: {e}")
-                
-                # 打印执行结果
-                status = "✓" if result.overall_result.value in ['success', 'fallback'] else "✗"
-                self.logger.info(
-                    f"{status} {test_case.name}: "
-                    f"{result.successful_steps}/{result.total_steps} 步骤成功 "
-                    f"({result.total_execution_time:.2f}s)"
+            # 执行智能对齐
+            alignment_result = await align_script_pair(
+                airtest_steps=airtest_steps,
+                poco_steps=poco_steps,
+                qwen_api_key=qwen_api_key or os.getenv("QWEN_API_KEY")
+            )
+            
+            # 创建融合脚本
+            script_filename = create_fusion_script_from_alignment(
+                script_name=test_case.name,
+                alignment_results=alignment_result,
+                airtest_source=test_case.airtest_path,
+                poco_source=test_case.poco_path
+            )
+            
+            self.logger.info(f"融合脚本已保存: {script_filename}")
+            return script_filename
+            
+        except Exception as e:
+            self.logger.error(f"融合处理失败: {e}")
+            raise
+    
+    def run_fusion_script(self, script_filename: str, config: Optional[ExecutionConfig] = None) -> Any:
+        """
+        执行融合脚本
+        
+        Args:
+            script_filename: 融合脚本文件名
+            config: 执行配置
+            
+        Returns:
+            执行结果
+        """
+        if config is None:
+            config = ExecutionConfig(
+                strategy=ExecutionStrategy.ADAPTIVE,
+                timeout=30,
+                retry_count=2,
+                failover_enabled=True
+            )
+        
+        self.logger.info(f"开始执行融合脚本: {script_filename}")
+        
+        try:
+            # 构建完整的文件路径
+            if not script_filename.startswith('/') and not script_filename.startswith('.'):
+                # 如果是相对路径，添加 fusion_scripts 目录
+                script_path = Path("fusion_scripts") / script_filename
+            else:
+                script_path = Path(script_filename)
+            
+            # 加载融合脚本
+            fusion_script = self.persistence.load_fusion_script(str(script_path))
+            
+            if fusion_script is None:
+                raise FileNotFoundError(f"无法加载融合脚本: {script_path}")
+            
+            # 更新执行器配置
+            self.executor.config = config
+            
+            # 设置执行环境（初始化设备连接）
+            self.executor.setup_environment()
+            
+            # 执行脚本（execute_fusion_script 只接受一个参数）
+            result = self.executor.execute_fusion_script(fusion_script)
+            
+            self.logger.info(f"融合脚本执行完成: {script_filename}")
+            return result
+            
+        except Exception as e:
+            self.logger.error(f"融合脚本执行失败: {e}")
+            raise
+    
+    def _convert_failover_result(self, failover_result: Any, case_name: str) -> ExecFusionExecutionResult:
+        """
+        将 FailoverExecutor 的结果转换为报告器所需的 ExecFusionExecutionResult
+        """
+        # 计算回退步数
+        fallback_steps = 0
+        exec_step_results: List[ExecStepExecutionResult] = []
+        for sr in failover_result.step_results:
+            # 映射步骤结果到统一的 ExecutionResult
+            if getattr(sr, 'result', None) is not None:
+                raw_res = sr.result.name if hasattr(sr.result, 'name') else str(sr.result)
+            else:
+                raw_res = 'FAILED'
+            if raw_res == 'SUCCESS':
+                mapped = ExecExecutionResult.SUCCESS
+            elif raw_res == 'SKIPPED':
+                mapped = ExecExecutionResult.SKIPPED
+            else:
+                # 将 ERROR/TIMEOUT/FAILED 统一为 FAILED
+                mapped = ExecExecutionResult.FAILED
+            # 统计回退
+            if getattr(sr, 'fallback_used', False):
+                fallback_steps += 1
+            # used_strategy 用 failover 的执行方法字段替代
+            used_strategy = getattr(sr, 'execution_method', '')
+            exec_step_results.append(
+                ExecStepExecutionResult(
+                    step_index=len(exec_step_results),
+                    result=mapped,
+                    execution_time=getattr(sr, 'execution_time', 0.0),
+                    error_message=getattr(sr, 'error_message', ''),
+                    used_strategy=used_strategy,
+                    fallback_used=getattr(sr, 'fallback_used', False)
                 )
+            )
+
+        # 计算整体结果：有回退则视为 FALLBACK；否则按是否全部成功
+        if getattr(failover_result, 'overall_success', False):
+            overall = ExecExecutionResult.FALLBACK if fallback_steps > 0 else ExecExecutionResult.SUCCESS
+        else:
+            overall = ExecExecutionResult.FAILED
+
+        return ExecFusionExecutionResult(
+            case_name=case_name,
+            total_steps=getattr(failover_result, 'total_steps', len(exec_step_results)),
+            successful_steps=getattr(failover_result, 'successful_steps', 0),
+            failed_steps=getattr(failover_result, 'failed_steps', 0),
+            fallback_steps=fallback_steps,
+            total_execution_time=getattr(failover_result, 'total_execution_time', 0.0),
+            step_results=exec_step_results,
+            overall_result=overall
+        )
+
+    def run_test_cases(self, test_cases: List[TestCaseInfo], case_filter: Optional[str] = None) -> List[ExecFusionExecutionResult]:
+        """
+        运行测试用例
+        
+        Args:
+            test_cases: 测试用例列表
+            case_filter: 用例过滤器（支持通配符）
+            
+        Returns:
+            Dict[str, Any]: 执行结果统计
+        """
+        import fnmatch
+        import asyncio
+        import os
+        
+        # 过滤测试用例
+        if case_filter:
+            filtered_cases = [
+                case for case in test_cases 
+                if fnmatch.fnmatch(case.name, case_filter)
+            ]
+        else:
+            filtered_cases = test_cases
+        
+        self.logger.info(f"准备执行 {len(filtered_cases)} 个测试用例")
+        
+        results_list: List[ExecFusionExecutionResult] = []
+        
+        for test_case in filtered_cases:
+            try:
+                self.logger.info(f"执行测试用例: {test_case.name}")
+                
+                # 检查是否已有融合脚本
+                fusion_script_name = f"{test_case.name}.fusion.json"
+                fusion_script_path = Path("fusion_scripts") / fusion_script_name
+                
+                if not fusion_script_path.exists():
+                    self.logger.info(f"融合脚本不存在，开始创建: {fusion_script_name}")
+                    
+                    # 创建融合脚本
+                    script_filename = asyncio.run(self.process_fusion(
+                        test_case, 
+                        qwen_api_key=os.getenv("QWEN_API_KEY")
+                    ))
+                else:
+                    script_filename = fusion_script_name
+                    self.logger.info(f"使用现有融合脚本: {script_filename}")
+                
+                # 执行融合脚本（获得 failover 执行结果）
+                failover_result = self.run_fusion_script(script_filename)
+                # 转换为报告器期望的结果类型
+                converted = self._convert_failover_result(failover_result, test_case.name)
+                results_list.append(converted)
+                
+                # 日志按整体结果记录
+                if converted.overall_result in [ExecExecutionResult.SUCCESS, ExecExecutionResult.FALLBACK]:
+                    self.logger.info(f"测试用例执行成功: {test_case.name}")
+                else:
+                    self.logger.warning(f"测试用例执行失败: {test_case.name}")
                 
             except Exception as e:
-                self.logger.error(f"执行用例 {test_case.name} 时发生错误: {e}")
-                if self.config.debug_mode:
-                    import traceback
-                    self.logger.error(traceback.format_exc())
+                self.logger.error(f"测试用例执行失败: {test_case.name}, 错误: {e}")
         
-        self.logger.info(f"测试执行完成，共执行 {len(results)} 个用例")
-        
-        return results
+        return results_list
     
-    def generate_report(self, 
-                       results: List[FusionExecutionResult],
-                       report_title: str = "融合测试执行报告") -> Dict[str, str]:
+    def generate_report(self, results: Any, report_title: str = "融合测试执行报告") -> Dict[str, str]:
         """
         生成测试报告
         
         Args:
-            results: 执行结果列表
+            results: 测试执行结果
             report_title: 报告标题
             
         Returns:
-            Dict[str, str]: 生成的报告文件路径
+            str: 报告文件路径
         """
-        self.logger.info("开始生成测试报告")
-        
-        report_paths = self.reporter.generate_report(results, report_title)
-        
-        self.logger.info("测试报告生成完成:")
-        for report_type, path in report_paths.items():
-            self.logger.info(f"  {report_type.upper()}: {path}")
-        
-        # 打印摘要到控制台
-        if self.config.logging.console_output:
-            self.reporter.print_summary(results)
-        
-        return report_paths
+        try:
+            # 如果传入的是聚合 dict，转换为列表
+            if isinstance(results, dict) and 'details' in results:
+                converted_list: List[ExecFusionExecutionResult] = []
+                for item in results.get('details', []):
+                    case_name = item.get('name', 'unknown')
+                    if 'result' in item:
+                        converted_list.append(self._convert_failover_result(item['result'], case_name))
+                results_for_report = converted_list
+            elif isinstance(results, list):
+                results_for_report = results
+            else:
+                results_for_report = []
+            # 使用 FusionReporter 生成报告（返回包含 html/json 的字典）
+            report_paths = self.reporter.generate_report(results_for_report, report_title)
+            self.logger.info(f"测试报告已生成: {report_paths}")
+            return report_paths
+        except Exception as e:
+            self.logger.error(f"生成报告失败: {e}")
+            # 回退生成简单文本报告
+            report_content_lines = [
+                report_title,
+                '=' * len(report_title),
+                '',
+            ]
+            if isinstance(results, list):
+                report_content_lines.append(f"总用例数: {len(results)}")
+            elif isinstance(results, dict):
+                report_content_lines.append(f"总用例数: {results.get('total', 0)}")
+                report_content_lines.append(f"成功: {results.get('passed', 0)} 失败: {results.get('failed', 0)} 跳过: {results.get('skipped', 0)}")
+            report_content = "\n".join(report_content_lines)
+            report_path = f"fusion_test_report_{int(time.time())}.txt"
+            with open(report_path, 'w', encoding='utf-8') as f:
+                f.write(report_content)
+            return {'txt': report_path}
     
-    def run_full_test_suite(self, 
-                           test_root: Optional[str] = None,
-                           case_filter: Optional[str] = None,
-                           report_title: str = "融合测试执行报告") -> Dict[str, Any]:
+    def run_full_test_suite(self, case_filter: Optional[str] = None, report_title: str = "融合测试执行报告") -> Dict[str, Any]:
         """
         运行完整的测试套件
         
         Args:
-            test_root: 测试根目录
-            case_filter: 用例过滤器
+            case_filter: 用例过滤器（支持通配符）
             report_title: 报告标题
             
         Returns:
-            Dict[str, Any]: 包含执行结果和报告路径的字典
+            Dict[str, Any]: 执行结果
         """
-        start_time = time.time()
-        
         try:
-            # 验证配置
-            if not validate_config(self.config):
-                raise ValueError("配置验证失败")
-            
             # 发现测试用例
-            test_cases = self.discover_test_cases(test_root)
+            test_cases = self.discover_test_cases()
             
             if not test_cases:
-                self.logger.warning("没有发现任何测试用例")
-                return {
-                    'results': [],
-                    'reports': {},
-                    'execution_time': 0.0,
-                    'success': False
-                }
+                self.logger.warning("未发现任何测试用例")
+                return {'success': False, 'message': '未发现任何测试用例'}
             
-            # 执行测试用例
-            results = self.run_test_cases(test_cases, case_filter)
+            # 运行测试用例（返回列表）
+            results_list = self.run_test_cases(test_cases, case_filter)
             
             # 生成报告
-            report_paths = self.generate_report(results, report_title)
+            try:
+                report_paths = self.generate_report(results_list, report_title)
+                self.logger.info(f"测试报告已生成: {report_paths}")
+            except Exception as report_error:
+                self.logger.warning(f"报告生成失败: {report_error}")
+                report_paths = None
             
-            execution_time = time.time() - start_time
-            
-            self.logger.info(f"完整测试套件执行完成，总耗时: {execution_time:.2f}秒")
+            # 计算总体成功
+            overall_success = all(
+                r.overall_result.value in ['success', 'fallback'] for r in results_list
+            ) if results_list else False
             
             return {
-                'results': results,
-                'reports': report_paths,
-                'execution_time': execution_time,
-                'success': True
+                'success': overall_success,
+                'results': results_list,
+                'report_paths': report_paths
             }
             
         except Exception as e:
-            execution_time = time.time() - start_time
             self.logger.error(f"测试套件执行失败: {e}")
-            
-            if self.config.debug_mode:
-                import traceback
-                self.logger.error(traceback.format_exc())
-            
-            return {
-                'results': [],
-                'reports': {},
-                'execution_time': execution_time,
-                'success': False,
-                'error': str(e)
-            }
+            return {'success': False, 'error': str(e)}
+    
+
+    
+
 
 
 def main():
