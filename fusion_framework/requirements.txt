@@ -1,0 +1,36 @@
+# Fusion Framework 依赖包
+
+# 核心测试框架
+airtest>=1.3.0
+pocoui>=1.0.89
+
+# HTTP请求和API调用
+requests>=2.25.0
+
+# 配置文件处理
+pyyaml>=5.4.0
+
+# 模板引擎
+jinja2>=3.0.0
+
+# 终端颜色输出
+colorama>=0.4.4
+
+# 进度条显示
+tqdm>=4.62.0
+
+# JSON处理
+jsonschema>=3.2.0
+
+# 日期时间处理
+python-dateutil>=2.8.0
+
+# 文件路径处理
+pathlib2>=2.3.0; python_version<"3.4"
+
+# 开发依赖（可选）
+# pytest>=6.0
+# pytest-cov>=2.0
+# black>=21.0
+# flake8>=3.8
+# mypy>=0.800

@@ -2,12 +2,10 @@
 __author__ = "cooperd"
 
 from airtest.core.api import *
-from airtest.cli.parser import cli_setup
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 import time
 
-if not cli_setup():
-    auto_setup(__file__, logdir=True, devices=["android://127.0.0.1:5037/R5CW23068CJ?cap_method=ADBCAP&touch_method=MAXTOUCH&",])
+auto_setup(__file__, logdir=True, devices=["android://127.0.0.1:5037/R5CW23068CJ?cap_method=ADBCAP&touch_method=MAXTOUCH&",])
 
 # 初始化poco
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)

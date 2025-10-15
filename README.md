@@ -2,37 +2,26 @@
 
 一个基于 Airtest 的企业级移动应用自动化测试框架，提供完整的测试发现、执行、报告和管理功能。
 
-## 🤖 新增功能：智能对齐系统
+## 🤖 智能融合测试框架
 
-本框架现已集成 **Qwen API 智能对齐系统**，支持 Airtest 和 Poco 脚本的智能分析和对齐：
+本项目现在包含一个独立的 **智能融合测试框架**，专门用于 Airtest 和 Poco 脚本的智能分析和对齐。
 
-### 主要特性
+### 融合框架特性
 - 🧠 **AI 驱动对齐**: 使用 Qwen 大语言模型进行智能步骤分析
 - 🔄 **多算法支持**: 基础算法 + AI 增强算法
 - ⚙️ **灵活配置**: 支持环境变量和代码配置
 - 🛡️ **错误处理**: 完善的重试机制和降级方案
 - 📊 **性能优化**: 缓存、批处理和超时控制
 
-### 快速使用
-```python
-from airtest_framework.fusion.intelligent_alignment import align_script_pair
-from airtest_framework.fusion.qwen_config import create_config
+### 融合框架使用
+融合测试框架已独立为单独的项目，位于 `fusion_framework/` 目录：
 
-# 配置 Qwen API
-config = create_config(api_key='your_api_key')
-
-# 智能对齐脚本
-result = await align_script_pair(
-    airtest_script_path='path/to/airtest_script.py',
-    poco_script_path='path/to/poco_script.py',
-    qwen_config=config
-)
+```bash
+cd fusion_framework
+python run_fusion_tests.py --help
 ```
 
-### 相关文档
-- 📚 [Qwen API 配置指南](docs/Qwen_API_配置指南.md)
-- 💡 [使用示例](examples/qwen_api_example.py)
-- 🧪 [测试文件](tests/test_qwen_api.py)
+详细使用说明请参考：[Fusion Framework README](fusion_framework/README.md)
 
 ## 🚀 快速开始
 
@@ -43,6 +32,7 @@ pip install pyyaml
 ```
 
 ### 基本使用
+
 ```bash
 # 查看帮助
 python3 run_tests.py --help
@@ -121,26 +111,26 @@ python3 run_tests.py run --report --output-dir ./reports
 │   │   ├── executor.py        # 测试执行引擎
 │   │   ├── reporter.py        # 报告生成引擎
 │   │   └── config.py          # 配置管理
-│   ├── fusion/                # 智能对齐系统 🆕
-│   │   ├── alignment.py       # 基础对齐算法
-│   │   ├── enhanced_parser.py # 增强解析器
-│   │   ├── intelligent_alignment.py  # 智能对齐核心
-│   │   ├── qwen_config.py     # Qwen API 配置
-│   │   └── script_parser.py   # 脚本解析器
 │   └── utils/                 # 工具模块
 │       ├── file_utils.py      # 文件操作工具
 │       ├── device_utils.py    # 设备管理工具
 │       └── logger.py          # 日志工具
+├── fusion_framework/          # 独立的智能融合测试框架 🆕
+│   ├── src/                   # 源代码目录
+│   ├── docs/                  # 融合框架文档
+│   ├── examples/              # 融合框架示例
+│   ├── config/                # 融合框架配置
+│   ├── run_fusion_tests.py    # 融合测试入口
+│   └── README.md              # 融合框架说明
 ├── tests/                     # 测试用例目录
-│   ├── mobile_login_test.air  # 移动端登录测试
-│   ├── mobile_ui_demo.air     # 移动端UI演示
-│   └── test_qwen_api.py       # Qwen API 测试 🆕
-├── examples/                  # 示例代码 🆕
-│   └── qwen_api_example.py    # Qwen API 使用示例
-├── docs/                      # 文档目录 🆕
-│   └── Qwen_API_配置指南.md   # Qwen API 配置指南
-├── run_tests.py              # 主程序入口
-├── demo_framework.py         # 功能演示脚本
+│   └── mobile/                # 移动端测试
+│       ├── test_case_demo.air # 测试演示
+│       └── test_case_demo_poco.air # Poco测试演示
+├── docs/                      # 文档目录
+│   ├── API文档.md             # API文档
+│   ├── 用户手册.md            # 用户手册
+│   └── 设计文档.md            # 设计文档
+├── run_tests.py              # 主要测试框架入口
 └── README.md                 # 项目说明
 ```
 

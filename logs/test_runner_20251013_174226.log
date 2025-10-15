@@ -1,5 +1,0 @@
-2025-10-13 17:42:26,378 - TestRunner - INFO - 开始扫描测试目录: tests/
-2025-10-13 17:42:26,379 - TestRunner - INFO - 发现 2 个测试项目
-2025-10-13 17:42:26,379 - TestRunner - INFO - 开始执行测试，数量: 2, 设备: Android:///, 并行: False
-2025-10-13 17:42:26,398 - TestRunner - INFO - 检测到Android设备: ['R5CW23068CJ\tdevice']
-2025-10-13 17:42:26,398 - TestRunner - INFO - 开始执行测试套件，并行模式: False
