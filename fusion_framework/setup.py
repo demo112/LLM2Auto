@@ -67,7 +67,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'fusion-test=fusion_framework.scripts.run_fusion_tests:main',
+            'fusion-test=fusion_framework.cli.main:main',
         ],
     },
     include_package_data=True,

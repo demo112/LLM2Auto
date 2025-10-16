@@ -7,15 +7,15 @@ Fusion Framework - 智能融合测试框架
 集成Qwen API进行智能对齐和执行。
 """
 
-from .core.main import FusionTestFramework
+from .cli.main import FusionTestFramework
 from .core.config import FusionConfig, load_config, create_default_config_file
 from .core.discovery import TestCaseDiscovery, TestCaseInfo
-from .core.enhanced_parser import EnhancedScriptParser
-from .core.intelligent_alignment import align_script_pair, QwenAlignmentAssistant
-from .core.persistence import FusionPersistence, FusionScript, FusionMetadata, FusionStep
-from .core.failover_executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
+from .core.parser import EnhancedScriptParser
+from .core.alignment import align_script_pair, QwenAlignmentAssistant
+from .utils.persistence import FusionPersistence, FusionScript, FusionMetadata, FusionStep
+from .core.executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
 from .core.reporter import FusionReporter
-from .core.qwen_config import QwenConfig, create_config, get_default_config
+from .utils.qwen_client import QwenConfig, create_config, get_default_config
 
 __version__ = "1.0.0"
 __author__ = "Fusion Framework Team"

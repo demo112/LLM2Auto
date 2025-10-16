@@ -18,7 +18,7 @@ project_root = Path(__file__).parent
 src_path = project_root / "src"
 sys.path.insert(0, str(src_path))
 
-from fusion_framework.core.main import FusionTestFramework
+from fusion_framework.cli.main import FusionTestFramework
 from fusion_framework.core.config import load_config, validate_config
 
 

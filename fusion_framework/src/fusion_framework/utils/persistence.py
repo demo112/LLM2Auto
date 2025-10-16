@@ -5,6 +5,7 @@
 负责融合脚本的序列化、存储、加载和版本管理
 """
 
+from __future__ import annotations
 import json
 import os
 import hashlib
@@ -13,8 +14,7 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, asdict
 from pathlib import Path
 
-from .enhanced_parser import OperationStep, CodeBlock, OperationType
-from .intelligent_alignment import AlignmentResult
+from ..core.parser import OperationStep, CodeBlock, OperationType
 
 
 @dataclass
@@ -76,7 +76,7 @@ class FusionPersistence:
     
     def save_fusion_script(self, 
                           script_name: str,
-                          alignment_results: List[AlignmentResult],
+                          alignment_results: List['AlignmentResult'],
                           airtest_source: str,
                           poco_source: str,
                           algorithm_version: str = "qwen_enhanced_v1") -> str:
@@ -270,7 +270,7 @@ class FusionPersistence:
     
     def _create_fusion_script(self, 
                              script_name: str,
-                             alignment_results: List[AlignmentResult],
+                             alignment_results: List['AlignmentResult'],
                              airtest_source: str,
                              poco_source: str,
                              airtest_hash: str,
@@ -338,7 +338,7 @@ class FusionPersistence:
             'raw_lines': code_block.raw_lines
         }
     
-    def _get_operation_type(self, result: AlignmentResult) -> str:
+    def _get_operation_type(self, result: 'AlignmentResult') -> str:
         """获取操作类型"""
         if result.airtest_step:
             return result.airtest_step.operation_type.value
@@ -347,7 +347,7 @@ class FusionPersistence:
         else:
             return OperationType.OTHER.value
     
-    def _get_target_element(self, result: AlignmentResult) -> str:
+    def _get_target_element(self, result: 'AlignmentResult') -> str:
         """获取目标元素"""
         if result.airtest_step and result.airtest_step.target_element:
             return result.airtest_step.target_element
@@ -356,7 +356,7 @@ class FusionPersistence:
         else:
             return ""
     
-    def _merge_semantic_tags(self, result: AlignmentResult) -> List[str]:
+    def _merge_semantic_tags(self, result: 'AlignmentResult') -> List[str]:
         """合并语义标签"""
         tags = set()
         
@@ -416,7 +416,7 @@ class FusionPersistence:
 
 
 def create_fusion_script_from_alignment(script_name: str,
-                                       alignment_results: List[AlignmentResult],
+                                       alignment_results: List['AlignmentResult'],
                                        airtest_source: str,
                                        poco_source: str,
                                        storage_root: str = None) -> str:

@@ -12,8 +12,9 @@ from pathlib import Path
 from typing import List, Dict, Any
 from dataclasses import asdict
 
-from .executor import FusionExecutionResult, StepExecutionResult, ExecutionResult
-from .alignment import AlignedStepPair, ActionStep, ActionType
+from .executor import FusionExecutionResult, StepExecutionResult
+from .alignment import AlignmentResult
+from .parser import OperationStep
 
 
 class FusionReporter:
@@ -57,7 +58,7 @@ class FusionReporter:
     
     def generate_alignment_report(self, 
                                 case_name: str,
-                                aligned_steps: List[AlignedStepPair],
+                                aligned_steps: List[AlignmentResult],
                                 execution_results: List[StepExecutionResult] = None) -> str:
         """
         生成可视化对齐报告
@@ -484,7 +485,7 @@ class FusionReporter:
     
     def _create_alignment_html(self, 
                              case_name: str,
-                             aligned_steps: List[AlignedStepPair],
+                             aligned_steps: List[AlignmentResult],
                              timestamp: str,
                              execution_results: List[StepExecutionResult] = None) -> str:
         """创建对齐可视化HTML内容"""
@@ -765,7 +766,7 @@ class FusionReporter:
     
     def _create_step_pair_html(self, 
                              index: int, 
-                             step_pair: AlignedStepPair,
+                             step_pair: AlignmentResult,
                              execution_result: StepExecutionResult = None) -> str:
         """创建单个步骤对的HTML"""
         
@@ -809,14 +810,22 @@ class FusionReporter:
         </div>
         '''
     
-    def _create_step_html(self, step: ActionStep, step_type: str) -> str:
+    def _create_step_html(self, step, step_type: str) -> str:
         """创建单个步骤的HTML"""
+        if step is None:
+            return f'''
+            <div class="step-column {step_type}">
+                <div class="step-header">{step_type.upper()} 步骤</div>
+                <div class="step-empty">无对应步骤</div>
+            </div>
+            '''
+        
         return f'''
         <div class="step-column {step_type}">
             <div class="step-header">{step_type.upper()} 步骤</div>
-            <div class="step-type {step.action_type.value}">{step.action_type.value.upper()}</div>
-            <div class="step-target">目标: {step.target}</div>
-            {f'<div class="step-target">参数: {step.parameters}</div>' if step.parameters else ''}
-            <div class="step-code">{step.original_code}</div>
+            <div class="step-type {step.operation_type.value}">{step.operation_type.value.upper()}</div>
+            <div class="step-target">目标: {step.target_element or '未指定'}</div>
+            <div class="step-description">{step.description}</div>
+            <div class="step-code">{getattr(step, 'airtest_code', getattr(step, 'poco_code', None)).content if getattr(step, 'airtest_code', getattr(step, 'poco_code', None)) else '无代码'}</div>
         </div>
         '''

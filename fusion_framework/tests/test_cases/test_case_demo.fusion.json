@@ -2,12 +2,12 @@
   "metadata": {
     "name": "test_case_demo",
     "version": "1.0.0",
-    "created_at": "2025-10-14T20:25:36.914429",
-    "updated_at": "2025-10-14T20:25:36.914429",
-    "airtest_source": "tests/mobile/test_case_demo.air/test_case_demo.py",
-    "poco_source": "tests/mobile/test_case_demo_poco.air/test_case_demo_poco.py",
+    "created_at": "2025-10-15T16:18:42.015332",
+    "updated_at": "2025-10-15T16:18:42.015332",
+    "airtest_source": "../tests/mobile/test_case_demo.air/test_case_demo.py",
+    "poco_source": "../tests/mobile/test_case_demo_poco.air/test_case_demo_poco.py",
     "airtest_hash": "ded7af363a9cd8076485bfde260a0edd",
-    "poco_hash": "793f821ea034336ba02293e00cbb390b",
+    "poco_hash": "386db2b4ee6477a7fbd14a2515d9e8db",
     "alignment_algorithm": "qwen_enhanced_v1",
     "total_steps": 11,
     "matched_steps": 7,
@@ -31,8 +31,8 @@
       },
       "poco_code": {
         "content": "poco(\"com.android.systemui:id/home\").swipe([-0.3386, -0.7387])",
-        "start_line": 23,
-        "end_line": 23,
+        "start_line": 21,
+        "end_line": 21,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -41,8 +41,8 @@
       },
       "confidence_score": 0.645,
       "semantic_tags": [
-        "gesture",
         "navigation",
+        "gesture",
         "swipe"
       ],
       "alignment_reason": "中等置信度匹配：操作类型相似"
@@ -64,8 +64,8 @@
       },
       "poco_code": {
         "content": "poco(text=\"Youkey Life\").click()",
-        "start_line": 26,
-        "end_line": 26,
+        "start_line": 24,
+        "end_line": 24,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -95,8 +95,8 @@
       },
       "poco_code": {
         "content": "poco(\"家庭\\n第 1 个标签，共 4 个\").click()",
-        "start_line": 28,
-        "end_line": 28,
+        "start_line": 26,
+        "end_line": 26,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -126,8 +126,8 @@
       },
       "poco_code": {
         "content": "poco(\"事件\\n第 2 个标签，共 4 个\").click()",
-        "start_line": 29,
-        "end_line": 29,
+        "start_line": 27,
+        "end_line": 27,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -157,8 +157,8 @@
       },
       "poco_code": {
         "content": "poco(\"账号\\n第 4 个标签，共 4 个\").click()",
-        "start_line": 31,
-        "end_line": 31,
+        "start_line": 29,
+        "end_line": 29,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -188,8 +188,8 @@
       },
       "poco_code": {
         "content": "poco(\"家庭\\n第 1 个标签，共 4 个\").click()",
-        "start_line": 32,
-        "end_line": 32,
+        "start_line": 30,
+        "end_line": 30,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -219,8 +219,8 @@
       },
       "poco_code": {
         "content": "poco(\"安全模式\\n第 3 个标签，共 4 个\").click()",
-        "start_line": 30,
-        "end_line": 30,
+        "start_line": 28,
+        "end_line": 28,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -263,8 +263,8 @@
       "airtest_code": null,
       "poco_code": {
         "content": "poco(\"com.android.systemui:id/home\").click()",
-        "start_line": 22,
-        "end_line": 22,
+        "start_line": 20,
+        "end_line": 20,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -286,8 +286,8 @@
       "airtest_code": null,
       "poco_code": {
         "content": "poco(\"com.android.systemui:id/back\").click()",
-        "start_line": 33,
-        "end_line": 33,
+        "start_line": 31,
+        "end_line": 31,
         "imports": [],
         "variables": {},
         "raw_lines": [
@@ -308,8 +308,8 @@
       "airtest_code": null,
       "poco_code": {
         "content": "poco(\"com.android.systemui:id/back\").click()",
-        "start_line": 34,
-        "end_line": 34,
+        "start_line": 32,
+        "end_line": 32,
         "imports": [],
         "variables": {},
         "raw_lines": [

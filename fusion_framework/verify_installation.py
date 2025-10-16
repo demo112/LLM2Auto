@@ -110,8 +110,8 @@ def check_imports():
         from fusion_framework.core.config import FusionConfig
         print("✅ fusion_framework.core.config")
         
-        from fusion_framework.core.main import FusionTestFramework
-        print("✅ fusion_framework.core.main")
+        from fusion_framework.cli.main import FusionTestFramework
+        print("✅ fusion_framework.cli.main")
         
         from fusion_framework.core.discovery import TestCaseDiscovery
         print("✅ fusion_framework.core.discovery")

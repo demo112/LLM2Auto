@@ -16,28 +16,17 @@ if __name__ == '__main__':
     project_root = Path(__file__).parent.parent.parent
     sys.path.insert(0, str(project_root))
 
-# 始终尝试相对导入，失败则回退到绝对导入
-try:
-    from .config import FusionConfig, load_config, validate_config
-    from .discovery import TestCaseDiscovery, TestCaseInfo
-    from .enhanced_parser import EnhancedScriptParser
-    from .intelligent_alignment import align_script_pair
-    from .persistence import FusionPersistence, create_fusion_script_from_alignment
-    from .failover_executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
-    from .reporter import FusionReporter
-    # 报告器期望的结果类型（来自 executor）
-    from .executor import ExecutionResult as ExecExecutionResult
-    from .executor import StepExecutionResult as ExecStepExecutionResult
-    from .executor import FusionExecutionResult as ExecFusionExecutionResult
-except ImportError:
-    # 回退到绝对导入（用于向后兼容）
-    from fusion_framework.core.config import FusionConfig, load_config, validate_config
-    from fusion_framework.core.discovery import TestCaseDiscovery, TestCaseInfo
-    from fusion_framework.core.enhanced_parser import EnhancedScriptParser
-    from fusion_framework.core.intelligent_alignment import align_script_pair
-    from fusion_framework.core.persistence import FusionPersistence, create_fusion_script_from_alignment
-    from fusion_framework.core.failover_executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
-    from fusion_framework.core.reporter import FusionReporter
+# 使用新的模块结构导入
+from ..core.config import FusionConfig, load_config, validate_config
+from ..core.discovery import TestCaseDiscovery, TestCaseInfo
+from ..core.parser import EnhancedScriptParser
+from ..core.alignment import align_script_pair
+from ..utils.persistence import FusionPersistence, create_fusion_script_from_alignment
+from ..core.executor import FailoverExecutor, ExecutionConfig, ExecutionStrategy
+from ..core.reporter import FusionReporter
+# 报告器期望的结果类型（来自 executor）
+from ..core.executor import StepExecutionResult as ExecStepExecutionResult
+from ..core.executor import FusionExecutionResult as ExecFusionExecutionResult
 
 
 class FusionTestFramework:
@@ -115,7 +104,7 @@ class FusionTestFramework:
         self.logger.info(f"开始发现测试用例，根目录: {root_dir}")
         
         # 初始化discovery（如果还没有初始化或根目录改变了）
-        if self.discovery is None:
+        if self.discovery is None or str(self.discovery.tests_root) != root_dir:
             self.discovery = TestCaseDiscovery(root_dir)
         
         test_cases_dict = self.discovery.discover_test_cases()
@@ -197,11 +186,11 @@ class FusionTestFramework:
         
         try:
             # 构建完整的文件路径
-            if not script_filename.startswith('/') and not script_filename.startswith('.'):
-                # 如果是相对路径，添加 fusion_scripts 目录
+            script_path = Path(script_filename)
+            
+            # 如果是相对路径且不包含fusion_scripts，则添加fusion_scripts目录
+            if not script_path.is_absolute() and not str(script_path).startswith('fusion_scripts'):
                 script_path = Path("fusion_scripts") / script_filename
-            else:
-                script_path = Path(script_filename)
             
             # 加载融合脚本
             fusion_script = self.persistence.load_fusion_script(str(script_path))

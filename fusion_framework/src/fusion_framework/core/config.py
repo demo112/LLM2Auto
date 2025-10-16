@@ -140,27 +140,34 @@ class FusionConfig:
     @classmethod
     def from_dict(cls, config_dict: Dict[str, Any]) -> 'FusionConfig':
         """从字典创建配置"""
+        # 创建配置字典的副本，避免修改原始数据
+        config_copy = config_dict.copy()
+        
+        # 过滤掉不属于FusionConfig的配置项
+        if 'qwen_api' in config_copy:
+            del config_copy['qwen_api']  # qwen_api由QwenConfig单独处理
+        
         # 处理枚举类型
-        if 'execution_strategy' in config_dict:
-            config_dict['execution_strategy'] = ExecutionStrategy(config_dict['execution_strategy'])
-        if 'fallback_mode' in config_dict:
-            config_dict['fallback_mode'] = FallbackMode(config_dict['fallback_mode'])
+        if 'execution_strategy' in config_copy:
+            config_copy['execution_strategy'] = ExecutionStrategy(config_copy['execution_strategy'])
+        if 'fallback_mode' in config_copy:
+            config_copy['fallback_mode'] = FallbackMode(config_copy['fallback_mode'])
         
         # 处理子配置
-        if 'retry' in config_dict:
-            config_dict['retry'] = RetryConfig(**config_dict['retry'])
-        if 'timeout' in config_dict:
-            config_dict['timeout'] = TimeoutConfig(**config_dict['timeout'])
-        if 'alignment' in config_dict:
-            config_dict['alignment'] = AlignmentConfig(**config_dict['alignment'])
-        if 'report' in config_dict:
-            config_dict['report'] = ReportConfig(**config_dict['report'])
-        if 'device' in config_dict:
-            config_dict['device'] = DeviceConfig(**config_dict['device'])
-        if 'logging' in config_dict:
-            config_dict['logging'] = LoggingConfig(**config_dict['logging'])
+        if 'retry' in config_copy:
+            config_copy['retry'] = RetryConfig(**config_copy['retry'])
+        if 'timeout' in config_copy:
+            config_copy['timeout'] = TimeoutConfig(**config_copy['timeout'])
+        if 'alignment' in config_copy:
+            config_copy['alignment'] = AlignmentConfig(**config_copy['alignment'])
+        if 'report' in config_copy:
+            config_copy['report'] = ReportConfig(**config_copy['report'])
+        if 'device' in config_copy:
+            config_copy['device'] = DeviceConfig(**config_copy['device'])
+        if 'logging' in config_copy:
+            config_copy['logging'] = LoggingConfig(**config_copy['logging'])
         
-        return cls(**config_dict)
+        return cls(**config_copy)
     
     def to_dict(self) -> Dict[str, Any]:
         """转换为字典"""
