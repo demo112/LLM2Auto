@@ -1,0 +1,61 @@
+{
+  "report_time": 1761054858.775706,
+  "period_start": 1760968458.7756531,
+  "period_end": 1761054858.775706,
+  "statistics": {
+    "events_ALERT_RULE_ADDED": 2,
+    "events_info": 5,
+    "events_system_start": 1,
+    "events_mapping_created": 1,
+    "events_analysis_completed": 1,
+    "events_HIGH_MEMORY_USAGE": 1,
+    "events_warning": 2,
+    "events_LOW_CACHE_HIT_RATE": 1,
+    "events_last_hour": 7,
+    "current_cpu_usage": 45.2,
+    "current_memory_usage": 512.8,
+    "current_cache_hit_rate": 0.85,
+    "current_quality_score": 0.8425,
+    "current_quality_level": "good"
+  },
+  "event_summary": {
+    "total_events": 7,
+    "event_types": {
+      "LOW_CACHE_HIT_RATE": 1,
+      "HIGH_MEMORY_USAGE": 1,
+      "analysis_completed": 1,
+      "mapping_created": 1,
+      "system_start": 1,
+      "ALERT_RULE_ADDED": 2
+    },
+    "severity_distribution": {
+      "WARNING": 2,
+      "INFO": 5
+    },
+    "source_distribution": {
+      "performance": 2,
+      "integration_example": 3,
+      "monitor": 2
+    },
+    "error_rate": 0.0
+  },
+  "performance_analysis": {
+    "average_cpu_usage": 45.2,
+    "average_memory_usage": 512.8,
+    "average_cache_hit_rate": 0.85,
+    "cpu_trend": "unknown",
+    "total_snapshots": 1
+  },
+  "quality_analysis": {
+    "average_quality_score": 0.8425,
+    "quality_level_distribution": {
+      "good": 1
+    },
+    "quality_trend": "unknown",
+    "total_snapshots": 1
+  },
+  "recommendations": [
+    "内存使用率较高，建议优化内存管理",
+    "缓存命中率较低，建议优化缓存策略"
+  ]
+}

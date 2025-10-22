@@ -1,0 +1,71 @@
+analysis:
+  analysis_types:
+  - quality
+  - statistics
+  - patterns
+  cache_results: true
+  enable_pattern_detection: true
+  statistical_methods:
+  - basic
+  - correlation
+  - distribution
+mapping:
+  confidence_threshold: 0.9
+  enable_navigation_mapping: true
+  max_mappings_per_element: 5
+  navigation_keywords:
+  - 首页
+  - home
+  - 发现
+  - discover
+  - 我的
+  - mine
+  - profile
+  - 设置
+  - setting
+  - 消息
+  - message
+  - 通知
+  - notification
+  - 搜索
+  - search
+  - 返回
+  - back
+  - 确定
+  - confirm
+  - 取消
+  - cancel
+  similarity_weights:
+    position: 0.4
+    semantic: 0.3
+    sequence: 0.2
+    temporal: 0.1
+quality:
+  enable_auto_validation: true
+  min_confidence_threshold: 0.3
+  quality_thresholds:
+    excellent: 0.9
+    fair: 0.5
+    good: 0.7
+    poor: 0.3
+  quality_weights:
+    accuracy: 0.25
+    completeness: 0.15
+    consistency: 0.2
+    coverage: 0.25
+    reliability: 0.15
+report:
+  enable_dashboard: true
+  include_screenshots: true
+  max_details_count: 50
+  output_formats:
+  - html
+  - json
+  - markdown
+  template_style: modern
+system:
+  enable_debug: false
+  log_level: INFO
+  max_workers: 8
+  output_directory: output
+  timeout_seconds: 300
